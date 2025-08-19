@@ -1,0 +1,1 @@
+print("Quang đẹp trai")
