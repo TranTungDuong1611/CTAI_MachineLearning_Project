@@ -1,555 +1,1535 @@
 [
   {
-    "url": "https://vietnamnet.vn/tho-nhi-ky-tung-xe-tang-laser-alka-kaplan-huy-diet-uav-trong-nhay-mat-2433586.html",
-    "desc_len": 53.0,
-    "title": NaN,
-    "num_words": NaN,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/khach-tay-cuoi-vang-khi-cuoi-trau-up-ca-giua-dong-que-ninh-binh-2433334.html",
-    "desc_len": NaN,
-    "title": "Khách Tây cười vang khi cưỡi trâu, úp cá giữa đồng quê Ninh Bình",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/vi-sao-hanh-khach-luon-len-xuong-may-bay-bang-cua-ben-trai-2433645.html",
-    "desc_len": NaN,
-    "title": "Vì sao hành khách luôn lên xuống máy bay bằng cửa bên trái?",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/gia-xang-ngay-mai-du-bao-tang-tro-lai-2433905.html",
-    "desc_len": NaN,
-    "title": "Giá xăng ngày mai dự báo tăng trở lại",
+    "url": "https://vietnamnet.vn/mat-mang-vi-thich-choc-gheo-trong-luc-nhau-2434164.html",
+    "title": "Mất mạng vì thích chọc ghẹo lúc ăn nhậu",
     "num_words": 9.0,
-    "content_len": NaN
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/ong-lon-viet-ban-xe-dien-trung-quoc-bat-ngo-doi-van-2433837.html",
-    "desc_len": NaN,
-    "title": "Ông lớn Việt bán xe điện Trung Quốc bất ngờ ‘đổi vận'",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/quoc-vuong-bhutan-va-hoang-hau-den-ha-noi-2433272.html",
+    "title": "Quốc vương Bhutan và Hoàng hậu đến Hà Nội",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/vietlott-tim-duoc-ve-so-trung-doc-dac-3-4-ty-dong-2433787.html",
-    "desc_len": NaN,
-    "title": "Vietlott tìm được vé số trúng độc đắc tiền tỷ",
-    "num_words": 10.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/nhung-thang-ngay-tri-an-va-tu-hao-2433209.html",
+    "title": "Những tháng ngày tri ân và tự hào",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/bat-coc-doanh-nhan-va-nhung-man-tra-tan-da-man-ep-chi-tien-2433820.html",
-    "desc_len": NaN,
-    "title": "Bắt cóc doanh nhân và những màn tra tấn dã man, ép chi tiền",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/thu-tuong-ky-luat-ong-le-thanh-hai-2431275.html",
+    "title": "Thủ tướng kỷ luật ông Lê Thanh Hải",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tu-hinh-ba-ban-bun-rieu-sat-hai-ong-giao-thit-heo-2433686.html",
-    "desc_len": NaN,
-    "title": "Tử hình bà bán bún riêu sát hại ông giao thịt heo",
-    "num_words": 12.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/no-cuc-sac-dien-thoai-tu-che-nguoi-dan-ong-nhap-vien-roi-chuyen-tuyen-tren-2433903.html",
-    "desc_len": NaN,
-    "title": NaN,
-    "num_words": NaN,
-    "content_len": 157.0
-  },
-  {
-    "url": "https://vietnamnet.vn/ong-trump-thuc-day-cuoc-gap-lich-su-giua-tong-thong-nga-va-ukraine-2433904.html",
-    "desc_len": NaN,
-    "title": "Ông Trump thúc đẩy cuộc gặp lịch sử giữa tổng thống Nga và Ukraine",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/lai-thua-nu-viet-nam-nu-thai-lan-lo-lang-sea-games-2025-2433883.html",
-    "desc_len": NaN,
-    "title": "Liên tục thua nữ Việt Nam, Thái Lan lo hụt huy chương SEA Games",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/salah-lap-ky-luc-vo-doi-ngoai-hang-anh-isak-vang-vi-ngong-liverpool-2433922.html",
-    "desc_len": NaN,
-    "title": "Salah lập kỷ lục vô đối Ngoại hạng Anh, Isak vắng vì ngóng Liverpool",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/gio-ngang-`khoang-troi-xanh-tap-6-my-anh-mau-thuan-voi-chong-2433891.html",
-    "desc_len": NaN,
-    "title": "'Gió ngang khoảng trời xanh' tập 6: Mỹ Anh mâu thuẫn với chồng",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/lan-dau-hop-luyen-dieu-binh-o-quang-truong-ba-dinh-vao-toi-21-8-2433664.html",
-    "desc_len": NaN,
-    "title": "Lần đầu hợp luyện diễu binh ở Quảng trường Ba Đình vào tối 21/8",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/ong-nguyen-thanh-nghi-giu-chuc-bi-thu-dang-uy-cac-co-quan-dang-tphcm-2434140.html",
-    "desc_len": 53.0,
-    "title": NaN,
-    "num_words": NaN,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/tuyen-bo-chung-viet-nam-angola-2430152.html",
+    "title": "Tuyên bố chung Việt Nam - Angola",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/tong-bi-thu-to-lam-du-le-ky-niem-80-nam-thanh-lap-chinh-phu-2433943.html",
-    "desc_len": NaN,
     "title": NaN,
     "num_words": NaN,
-    "content_len": 88.0
+    "content_len": 88.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/mo-hop-mau-iphone-17-pro-mau-cam-dep-ngay-ngat-2433734.html",
-    "desc_len": NaN,
-    "title": "'Mở hộp' mẫu iPhone 17 Pro màu cam đẹp ngây ngất",
-    "num_words": 11.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/starlink-cua-elon-musk-da-thiet-lap-tram-mat-dat-dau-tien-tai-viet-nam-2434008.html",
-    "desc_len": NaN,
-    "title": "FPT đã cán mốc 1,5 tỉ USD từ thị trường quốc tế",
-    "num_words": 12.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/dao-luat-bayh-dole-cu-hich-dua-dai-hoc-my-thanh-trung-tam-doi-moi-sang-tao-2375698.html",
-    "desc_len": NaN,
-    "title": "Cú hích đưa đại học Mỹ thành trung tâm đổi mới sáng tạo",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/kols-quang-cao-sai-su-that-va-diep-khuc-xin-loi-sau-khi-livestream-2376720.html",
-    "desc_len": NaN,
-    "title": "KOLs quảng cáo sai sự thật và điệp khúc 'xin lỗi' sau khi livestream",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/tho-nhi-ky-tung-xe-tang-laser-alka-kaplan-huy-diet-uav-trong-nhay-mat-2433586.html",
-    "desc_len": 53.0,
+    "url": "https://vietnamnet.vn/tong-bi-thu-to-lam-gap-mat-cac-can-bo-cong-an-cap-cao-nghi-huu-2432735.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/dai-hoc-phai-la-cai-noi-cua-bang-sang-che-doi-moi-sang-tao-2375218.html",
-    "desc_len": 52.0,
+    "url": "https://vietnamnet.vn/tong-bi-thu-viet-nam-luon-ung-ho-va-dong-hanh-cung-cac-doanh-nghiep-han-quoc-2431390.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/chuyen-gia-mach-loat-bi-kip-sinh-ton-khi-di-lac-trong-rung-2434062.html",
-    "desc_len": NaN,
-    "title": "Chuyên gia mách loạt bí kíp sinh tồn khi đi lạc trong rừng",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/tong-bi-thu-to-lam-va-phu-nhan-du-tiec-tra-thuong-thuc-nghe-thuat-truyen-thong-2431197.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 2.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/khach-tay-cuoi-vang-khi-cuoi-trau-up-ca-giua-dong-que-ninh-binh-2433334.html",
-    "desc_len": NaN,
-    "title": "Khách Tây cười vang khi cưỡi trâu, úp cá giữa đồng quê Ninh Bình",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/tuyen-bo-chung-viet-nam-angola-2430152.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/toa-nha-quoc-hoi-hungary-vang-ruc-dep-nao-long-ben-dong-danube-2423287.html",
-    "desc_len": NaN,
-    "title": "Tòa nhà Quốc hội Hungary vàng rực, đẹp nao lòng bên dòng Danube",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/tong-thong-han-quoc-chuyen-tham-cua-tong-bi-thu-mo-ra-chuong-moi-quan-he-2-nuoc-2429646.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/hon-2-000-co-tro-ha-noi-xep-co-to-quoc-phu-do-san-truong-2434105.html",
-    "desc_len": NaN,
-    "title": "Hơn 2.000 cô trò Hà Nội xếp cờ Tổ quốc phủ đỏ sân trường",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/an-do-la-mot-trong-nhung-doi-tac-chien-luoc-toan-dien-hang-dau-cua-viet-nam-2429459.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/diem-chuan-truong-dai-hoc-hung-vuong-tphcm-nam-2025-2433999.html",
-    "desc_len": NaN,
-    "title": "Trường đại học đầu tiên công bố điểm chuẩn năm 2025",
-    "num_words": 11.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/apple-lam-dieu-chua-tung-co-voi-iphone-17-2433687.html",
+    "title": "Apple làm điều chưa từng có với iPhone 17",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/them-4-dot-loc-ao-nhieu-truong-dai-hoc-hoan-cong-bo-diem-chuan-2434042.html",
-    "desc_len": NaN,
-    "title": "Thêm 4 đợt lọc ảo, nhiều trường đại học hoãn công bố điểm chuẩn",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/iphone-18-se-khong-ra-mat-vao-nam-sau-2433523.html",
+    "title": "iPhone 18 sẽ không ra mắt vào năm sau?",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/link-tra-cuu-diem-chuan-cac-truong-dai-hoc-nam-2025-tren-vietnamnet-2433895.html",
-    "desc_len": NaN,
-    "title": "Link tra cứu điểm chuẩn các trường đại học năm 2025 trên VietNamNet",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/deepseek-len-loi-moi-ngoc-ngach-cua-trung-quoc-2389837.html",
+    "title": "DeepSeek len lỏi mọi ngóc ngách của Trung Quốc",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/hom-nay-20-8-bat-dau-cong-bo-diem-chuan-dai-hoc-nam-2025-2433831.html",
-    "desc_len": NaN,
-    "title": "Hôm nay 20/8, bắt đầu công bố điểm chuẩn đại học năm 2025",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/tim-cook-khen-deepseek-xuat-sac-2384129.html",
+    "title": "Tim Cook khen DeepSeek xuất sắc",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-bg-pathum-vs-cahn-cup-c1-dong-nam-a-2025-2434081.html",
+    "title": "CAHN thua khó tin trên đất Thái Lan",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vnpt-tiep-noi-truyen-thong-tien-phong-2432461.html",
+    "title": "VNPT tiếp nối truyền thống tiên phong",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ly-do-microsoft-thang-hoa-2429683.html",
+    "title": "Lý do Microsoft ‘thăng hoa’",
+    "num_words": 5.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/google-thua-nhan-bi-danh-cap-du-lieu-2429705.html",
+    "title": "Google thừa nhận bị đánh cắp dữ liệu",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/den-luot-chanel-va-pandora-bi-hacker-hoi-tham-2429388.html",
+    "title": "Đến lượt Chanel và Pandora bị hacker ‘hỏi thăm’",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cach-dua-mat-than-len-iphone-2428530.html",
+    "title": "Cách đưa ‘mắt thần’ lên iPhone",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/mark-zuckerberg-vua-tuyen-chien-voi-iphone-2428284.html",
+    "title": "Mark Zuckerberg vừa tuyên chiến với iPhone",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ai-thay-the-hang-nghin-viec-lam-moi-thang-2428203.html",
+    "title": "AI thay thế hàng nghìn việc làm mỗi tháng",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nguoi-tu-choi-1-ty-usd-cua-mark-zuckerberg-2428207.html",
+    "title": "Người từ chối 1 tỷ USD của Mark Zuckerberg",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/apple-ban-duoc-3-ty-iphone-2427649.html",
+    "title": "Apple bán được 3 tỷ iPhone",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/apple-lam-dieu-chua-tung-co-voi-iphone-17-2433687.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-bg-pathum-vs-cahn-cup-c1-dong-nam-a-2025-2434081.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/trao-giai-cuoc-thi-chuyen-cua-nhung-dong-song-2325575.html",
+    "title": "Trao giải cuộc thi 'Chuyện của những dòng sông'",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bai-chay-ve-dem-dang-hot-co-nao-2426938.html",
+    "title": "Bãi Cháy về đêm đang “hot” cỡ nào?",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/24-tieng-o-ha-noi-an-gi-ngon-di-dau-choi-2430084.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/le-son-lang-que-hoi-tu-tiem-nang-du-lich-giua-long-truong-son-2425280.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/5-hon-dao-o-mien-bac-bien-xanh-cat-trang-co-noi-hoang-so-khong-lo-dat-do-2419614.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/chang-trai-dat-9-0-ielts-sau-10-lan-thi-2402686.html",
+    "title": "Chàng trai đạt 9.0 IELTS sau 10 lần thi",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cau-truc-moi-cua-bai-thi-toefl-ibt-tu-nam-2026-2421904.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 18.0
+  },
+  {
+    "url": "https://vietnamnet.vn/ha-noi-tang-43-truong-trong-nam-hoc-moi-2432198.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 16.0
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-nghi-le-2-9-cua-hoc-sinh-ha-noi-nam-2025-2430494.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 17.0
   },
   {
     "url": "https://vietnamnet.vn/ai-la-nguoi-noi-lam-dan-mot-nuoc-doc-lap-con-hon-lam-vua-mot-nuoc-no-le-2433714.html",
-    "desc_len": NaN,
     "title": NaN,
     "num_words": NaN,
-    "content_len": 0.0
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/ong-lon-viet-ban-xe-dien-trung-quoc-bat-ngo-doi-van-2433837.html",
-    "desc_len": NaN,
-    "title": "Ông lớn Việt bán xe điện Trung Quốc bất ngờ ‘đổi vận'",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/nguoi-me-nao-co-nhieu-con-chau-hy-sinh-nhat-trong-khang-chien-chong-phap-my-2433380.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/trong-cay-thuoc-quy-ca-lang-doi-doi-mua-ket-cat-tien-438949.html",
-    "desc_len": NaN,
-    "title": "Trồng cây thuốc quý: Cả làng đổi đời, mua két cất tiền",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/giao-su-viet-nam-nao-tung-duoc-phuong-tay-goi-la-bo-truong-thong-thai-nhat-2432946.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-nao-la-anh-ca-cua-du-kich-viet-nam-2432843.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ca-nuoc-luon-chon-ngay-5-9-de-khai-giang-nam-hoc-moi-vi-sao-2432070.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ai-la-vi-tuong-dau-tien-cua-quan-doi-nhan-dan-viet-nam-2432166.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nhung-nganh-co-diem-chuan-xet-tuyen-tu-27-tro-len-o-cac-truong-dai-hoc-phia-nam-2431567.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 50.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-nao-tung-mot-thoi-la-thay-giao-day-su-2431185.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ai-la-nu-bo-truong-duy-nhat-cua-hai-bo-lon-2431393.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nhieu-thi-sinh-se-khong-duoc-xet-tuyen-vao-truong-dai-hoc-su-pham-ky-thuat-tphcm-2431389.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 172.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-duy-nhat-viet-nam-duoc-phong-thang-len-trung-tuong-la-ai-2431011.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/diem-hoc-ba-ngay-cang-mat-gia-diem-chuan-se-cao-ngat-nguong-2430383.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 9.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/co-bao-nhieu-dai-tuong-trong-quan-doi-nhan-dan-viet-nam-2430578.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bien-dong-diem-chuan-3-nam-qua-cua-truong-dai-hoc-bach-khoa-tphcm-2430164.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 112.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-viet-nao-tung-duoc-vi-voi-khong-minh-2430391.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hon-100-thi-sinh-co-ielts-xet-tuyen-dh-su-pham-ky-thuat-tphcm-khong-duoc-quy-doi-2430358.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 114.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-nao-tung-cai-lenh-vua-de-khong-doi-dau-voi-ban-than-tren-chien-truong-2430172.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-nao-duoc-nhan-xet-danh-tran-gioi-nhat-viet-nam-2429770.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vi-tuong-tai-nao-tung-co-dam-cuoi-dac-biet-trong-ham-do-cat-2428140.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ai-la-doi-truong-dau-tien-cua-doi-viet-nam-tuyen-truyen-giai-phong-quan-2427799.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/gia-xang-ngay-mai-du-bao-tang-tro-lai-2433905.html",
-    "desc_len": NaN,
     "title": "Giá xăng ngày mai dự báo tăng trở lại",
     "num_words": 9.0,
-    "content_len": NaN
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/vietlott-tim-duoc-ve-so-trung-doc-dac-3-4-ty-dong-2433787.html",
-    "desc_len": NaN,
-    "title": "Vietlott tìm được vé số trúng độc đắc tiền tỷ",
-    "num_words": 10.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/nhung-dau-an-xanh-cua-vietcombank-2433274.html",
+    "title": "Những dấu ấn ‘xanh’ của Vietcombank",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/kdi-holdings-gioi-thieu-du-an-la-tien-villa-tai-bac-nha-trang-2434104.html",
-    "desc_len": NaN,
-    "title": "KDI Holdings giới thiệu dự án La Tiên Villa tại Bắc Nha Trang",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/petrolimex-ra-mat-nhien-lieu-hang-khong-ben-vung-2433284.html",
+    "title": "Petrolimex ra mắt nhiên liệu hàng không bền vững",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/gia-usd-ngan-hang-chinh-thuc-xac-lap-moc-26-500-dong-2434047.html",
-    "desc_len": NaN,
-    "title": "Giá USD ngân hàng chính thức xác lập mốc 26.500 đồng",
-    "num_words": 11.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/pin-mat-troi-trong-nha-lap-ky-luc-moi-2431416.html",
+    "title": "Pin mặt trời trong nhà lập kỷ lục mới",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/bat-giu-nguoi-dan-ong-bi-truy-na-dac-biet-nguy-hiem-2434143.html",
-    "desc_len": NaN,
-    "title": "Bắt giữ người đàn ông bị truy nã đặc biệt nguy hiểm",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/shb-gop-phan-kien-tao-niem-tin-so-2434165.html",
+    "title": "SHB góp phần kiến tạo ‘Niềm tin số’",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/bat-coc-doanh-nhan-va-nhung-man-tra-tan-da-man-ep-chi-tien-2433820.html",
-    "desc_len": NaN,
-    "title": "Bắt cóc doanh nhân và những màn tra tấn dã man, ép chi tiền",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/viettel-idc-ra-mat-thuong-hieu-vcloudia-tai-campuchia-2434017.html",
+    "title": "Viettel IDC ra mắt thương hiệu Vcloudia tại Campuchia",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tu-hinh-ba-ban-bun-rieu-sat-hai-ong-giao-thit-heo-2433686.html",
-    "desc_len": NaN,
-    "title": "Tử hình bà bán bún riêu sát hại ông giao thịt heo",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/ha-noi-khoi-cong-nhieu-du-an-trong-diem-2433981.html",
+    "title": "Hà Nội khởi công nhiều dự án trọng điểm",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/san-ve-concert-em-xinh-say-hi-cung-tpbank-2432732.html",
+    "title": "Săn vé concert Em xinh say hi cùng TPBank",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/agribank-mang-dich-vu-ngan-hang-hien-dai-den-xa-dao-thanh-an-2432674.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 17.0
+  },
+  {
+    "url": "https://vietnamnet.vn/gia-vang-hom-nay-11-8-2025-du-bao-tang-vang-sjc-co-lap-dinh-moi-2430559.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/le-vinh-danh-28-doanh-nghiep-tieu-bieu-vi-nguoi-lao-dong-nam-2025-2432528.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 98.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/truong-buong-giam-da-chet-ban-tu-2429429.html",
+    "title": "Trưởng buồng giam đá chết bạn tù",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/cong-an-tphcm-tim-bi-hai-trong-vu-an-hiep-dam-2433392.html",
-    "desc_len": NaN,
-    "title": "Công an TPHCM tìm bị hại trong vụ án hiếp dâm",
-    "num_words": 11.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/tu-hinh-ke-tan-cong-canh-sat-co-dong-hy-sinh-me-bi-hai-noi-cau-dau-long-tai-toa-2433327.html",
-    "desc_len": 52.0,
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 163.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/ly-do-cong-an-dinh-chi-vu-an-lien-quan-giam-doc-benh-vien-da-khoa-va-cdc-can-tho-2432760.html",
-    "desc_len": 54.0,
+    "url": "https://vietnamnet.vn/nguoi-dau-tien-o-dak-lak-bi-khoi-to-ve-toi-su-dung-trai-phep-chat-ma-tuy-2432492.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 156.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/cong-an-tphcm-tim-bi-hai-trong-vu-an-hiep-dam-2433392.html",
-    "desc_len": NaN,
+    "url": "https://vietnamnet.vn/xe-khach-cho-38-nguoi-gap-nan-o-lao-cai-1-nguoi-tu-vong-2434223.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": 163.0
+    "content_len": 173.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/nguoi-dan-ong-tre-khong-qua-khoi-do-dot-quy-sau-bua-com-trua-2433938.html",
-    "desc_len": NaN,
-    "title": "Người đàn ông trẻ không qua khỏi do đột quỵ sau bữa cơm trưa",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/bat-mot-cuu-tham-phan-o-dak-lak-ve-toi-nhan-hoi-lo-2431976.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 190.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tuoi-tho-nguoi-viet-tang-manh-noi-nao-nguoi-dan-song-lau-nhat-2304515.html",
-    "desc_len": NaN,
-    "title": "Tuổi thọ người Việt tăng mạnh, nơi nào người dân sống lâu nhất?",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/nguoi-phu-nu-mao-danh-nhan-vien-ngan-hang-lua-dao-gan-30-ty-dong-2431899.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 176.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tuoi-tho-nguoi-viet-bat-tang-lam-gi-de-co-tuoi-gia-nhu-y-2304948.html",
-    "desc_len": NaN,
-    "title": "Tuổi thọ người Việt tăng mạnh, làm gì để già hoá thành công?",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/hai-thanh-nien-o-can-tho-cho-nguoi-dan-ong-vay-15-ty-thu-loi-bat-chinh-3-8-ty-2430969.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 157.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/toi-da-chuan-bi-cho-tuoi-gia-tu-nam-30-tuoi-2305323.html",
-    "desc_len": NaN,
-    "title": "'Tôi đã chuẩn bị cho tuổi già từ năm 30 tuổi'",
-    "num_words": 11.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/khoi-to-nu-nhan-vien-ngan-hang-lam-gia-giay-to-de-chiem-doat-1-7-ty-dong-2426743.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 194.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/giam-doc-cong-ty-thue-5-o-to-mang-di-cam-co-chiem-doat-hon-2-3-ty-dong-2425707.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 173.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/doi-nam-nu-nguoi-lao-van-chuyen-17kg-ma-tuy-da-bi-bat-giu-2424679.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 196.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/khoi-to-bi-can-dau-tien-ve-toi-su-dung-trai-phep-ma-tuy-theo-quy-dinh-moi-2423359.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 92.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/truy-lung-nghi-pham-sat-hai-me-vo-roi-bo-tron-o-tay-ninh-2421178.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 119.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hai-anh-em-ruot-bi-sat-hai-tai-cuoc-nhau-o-dong-thap-2420867.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 187.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nguoi-phu-nu-u60-chem-nhau-voi-tinh-dich-den-nguy-kich-vi-ghen-2415098.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 178.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/be-trai-9-tuoi-ngung-tim-sau-lan-vo-tinh-uong-methadon-2433688.html",
+    "title": "Bé trai 9 tuổi ngừng tim do uống Methadon",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/tieu-bot-co-phai-suy-than-2409041.html",
+    "title": "Tiểu bọt có phải suy thận?",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/4-dau-hieu-tren-da-canh-bao-benh-gan-2431079.html",
+    "title": "Bốn thay đổi trên da cảnh báo bệnh gan",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/uong-nuoc-dua-ep-co-giam-mo-mau-giam-can-khong-2431524.html",
+    "title": "Uống nước dứa ép có giảm mỡ máu không?",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cam-buoi-chanh-duoc-menh-danh-sieu-trai-cay-2432206.html",
+    "title": "Cam, bưởi, chanh được mệnh danh 'siêu trái cây'",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nhan-rat-bo-duong-nhung-co-5-luu-y-khi-an-2431676.html",
+    "title": "Nhãn rất bổ dưỡng, ăn bao nhiêu là đủ",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/rau-diep-ca-co-cong-dung-gi-nhung-ai-khong-nen-an-rau-diep-ca-2423179.html",
+    "title": "Diếp cá - loại rau gia vị ‘trường sinh’",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bon-dieu-can-lam-khi-uong-nuoc-cam-de-bao-ve-suc-khoe-2430865.html",
+    "title": "Bốn điều cần biết trước khi uống nước cam",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/muse-medical-khai-truong-co-so-moi-tai-tp-hcm-2433156.html",
+    "title": "Muse Medical khai trương cơ sở mới tại TP.HCM",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/5-khong-khi-tap-the-duc-2429642.html",
+    "title": "5 không khi tập thể dục",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ha-noi-thuc-day-phong-ngua-benh-dai-ho-tro-chuyen-doi-kinh-doanh-thit-cho-meo-2430227.html",
+    "title": "Hà Nội thúc đẩy phòng ngừa bệnh dại",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/plasma-khang-viet-tien-phong-chuyen-giao-cong-nghe-2429374.html",
+    "title": "Plasma Khang Việt tiên phong chuyển giao công nghệ",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/do-uong-tot-nhat-cho-mua-he-2432433.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 18.0
   },
   {
     "url": "https://vietnamnet.vn/no-cuc-sac-dien-thoai-tu-che-nguoi-dan-ong-nhap-vien-roi-chuyen-tuyen-tren-2433903.html",
-    "desc_len": NaN,
     "title": NaN,
     "num_words": NaN,
-    "content_len": 157.0
+    "content_len": 157.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/nhung-loi-hua-hen-tu-my-va-phuong-tay-danh-cho-ukraine-2434036.html",
-    "desc_len": NaN,
-    "title": "Những lời 'hứa hẹn' từ Mỹ và phương Tây dành cho Ukraine",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/dieu-gi-xay-ra-voi-luong-duong-trong-mau-khi-ban-an-com-trang-2432941.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/trung-quoc-pho-dien-loat-vu-khi-moi-trong-cuoc-duyet-binh-sap-toi-2434127.html",
-    "desc_len": NaN,
-    "title": "Trung Quốc phô diễn loạt vũ khí mới trong cuộc duyệt binh sắp tới",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/an-rau-muong-song-loi-hay-hai-cho-suc-khoe-2432827.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 49.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/dai-su-ukraine-neu-ly-do-nato-can-phai-ket-nap-kiev-2434096.html",
-    "desc_len": NaN,
-    "title": "Đại sứ Ukraine nêu lý do NATO cần phải kết nạp Kiev",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/nhan-rat-bo-duong-nhung-co-5-luu-y-khi-an-2431676.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 106.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/lo-dien-xe-boc-thep-hang-hiem-cua-nga-tren-tien-tuyen-ukraine-2433941.html",
-    "desc_len": NaN,
-    "title": "Lộ diện xe bọc thép ‘hàng hiếm’ của Nga trên tiền tuyến Ukraine",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/uong-bia-cho-da-co-loi-hay-gay-hai-cho-suc-khoe-2431893.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/ong-trump-thuc-day-cuoc-gap-lich-su-giua-tong-thong-nga-va-ukraine-2433904.html",
-    "desc_len": NaN,
-    "title": "Ông Trump thúc đẩy cuộc gặp lịch sử giữa tổng thống Nga và Ukraine",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/3-thuc-pham-co-mau-do-va-den-bo-than-2430718.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 69.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/nha-trang-cong-bo-doi-hinh-xuc-tien-cuoc-gap-putin-zelensky-2433880.html",
-    "desc_len": NaN,
-    "title": "Nhà Trắng công bố 'đội hình' xúc tiến cuộc gặp Putin - Zelensky",
-    "num_words": 13.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/bi-lon-co-tot-khong-nhung-ai-khong-nen-an-bi-lon-2429231.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 112.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/gyokeres-ra-mat-arsenal-tham-hoa-dung-dua-voi-ngoai-hang-anh-2433949.html",
-    "desc_len": NaN,
-    "title": "Gyokeres ra mắt Arsenal thảm họa: Màn chào đón gắt từ Ngoại hạng Anh",
-    "num_words": 14.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/dieu-gi-xay-ra-voi-suc-khoe-khi-ban-dung-mi-an-lien-hang-ngay-2430334.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tranh-cai-gioi-tinh-the-thao-nu-tu-dang-thi-hong-den-the-gioi-2431729.html",
-    "desc_len": NaN,
-    "title": "Tranh cãi giới tính trong thể thao nữ: Khoảng trống pháp lý",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/5-khong-khi-tap-the-duc-2429642.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 117.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/garnacho-tu-choi-ong-lon-chau-au-khien-sep-mu-nong-mat-2434016.html",
-    "desc_len": NaN,
-    "title": "Garnacho từ chối 'ông lớn' châu Âu khiến sếp MU nóng mặt",
-    "num_words": 12.0,
-    "content_len": NaN
+    "url": "https://vietnamnet.vn/virus-chikungunya-dang-lay-lan-tren-the-gioi-co-nguy-hiem-khong-2429478.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 62.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hat-bi-co-nhieu-chat-nhu-thit-khong-an-nhieu-hat-bi-co-tot-khong-2428059.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 157.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ukraine-tan-cong-cang-bien-then-chot-cua-nga-2432357.html",
+    "title": "Ukraine tấn công cảng biển then chốt của Nga",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/iran-cung-luc-doi-mat-3-cuoc-khung-hoang-2430903.html",
+    "title": "Iran cùng lúc đối mặt 3 cuộc khủng hoảng",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/my-giang-don-trung-phat-moi-len-iran-2429878.html",
+    "title": "Mỹ giáng đòn trừng phạt mới lên Iran",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/xe-khach-boc-chay-sau-khi-va-cham-xe-bon-cho-xang-it-nhat-71-nguoi-thiet-mang-2434213.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 190.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ong-trump-va-ong-putin-hop-bao-chung-sau-2-5-gio-hoi-dam-2432599.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/khoanh-khac-canh-may-bay-ma-sat-voi-duong-bang-toe-lua-luc-ha-canh-2432323.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 168.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hinh-anh-cac-ho-bang-tai-alaska-dang-cao-chong-mat-2431876.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 129.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/truc-tiep-bong-da-bg-pathum-vs-cahn-cup-cac-clb-dong-nam-a-2025-2434081.html",
+    "title": "CAHN thua khó tin trên đất Thái Lan",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/liverpool-tra-muc-phi-ky-luc-mua-alexander-isak-2433874.html",
+    "title": "Liverpool trả mức phí kỷ lục mua Alexander Isak",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/mu-chi-80-trieu-euro-chuyen-nhuong-eduardo-camavinga-2433704.html",
+    "title": "MU vung tiền chiêu mộ Camavinga",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-bundesliga-2025-26-moi-nhat-2433290.html",
+    "title": "Lịch thi đấu bóng đá Bundesliga 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-mu-0-1-arsenal-vong-1-ngoai-hang-anh-2432904.html",
+    "title": "Arsenal hạ gục MU ngay tại Old Trafford",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-18-8-2432962.html",
+    "title": "Lịch thi đấu bóng đá hôm nay 18/8",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ligue-1-2025-26-moi-nhat-2433108.html",
+    "title": "Kết quả bóng đá Ligue 1 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-18-8-2432964.html",
+    "title": "Kết quả bóng đá hôm nay 18/8",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/v-league-2025-26-doi-van-cho-tuyen-viet-nam-len-doi-2432810.html",
+    "title": "V-League đổi vận, chờ tuyển Việt Nam... lên đời",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-nam-dinh-vs-hai-phong-vong-1-v-league-2025-26-2432706.html",
+    "title": "Nam Định ngược dòng thắng nghẹt thở Hải Phòng",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-aston-villa-0-0-newcastle-vong-1-ngoai-hang-anh-2432636.html",
+    "title": "Aston Villa cầm hòa Newcastle trong thế thiếu người",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-la-liga-2025-26-moi-nhat-2432071.html",
+    "title": "Bảng xếp hạng La Liga 2025/26 mới nhất",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-vong-2-v-league-2025-26-moi-nhat-2432734.html",
+    "title": "Lịch thi đấu vòng 2 V-League 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-la-liga-2025-26-moi-nhat-2432063.html",
+    "title": "Kết quả bóng đá La Liga 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-ngoai-hang-anh-2025-26-moi-nhat-2431927.html",
+    "title": "Bảng xếp hạng Ngoại hạng Anh 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-16-8-2025-2432220.html",
+    "title": "Kết quả bóng đá hôm nay 16/8",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/dai-hoi-thanh-lap-lien-doan-bong-chuyen-ha-noi-2432466.html",
+    "title": "Ra mắt Liên đoàn bóng chuyền Hà Nội",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/dien-bien-nong-chuyen-nhuong-mu-ky-baleba-2432181.html",
+    "title": "Diễn biến nóng chuyển nhượng MU ký Baleba",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/premier-league-2025-26-khai-man-thoi-co-cua-arsenal-2431932.html",
+    "title": "Premier League 2025/26: Thời cơ của Arsenal",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-vong-1-v-league-2025-26-moi-nhat-2431868.html",
+    "title": "Lịch thi đấu vòng 1 V-League 2025/26 mới nhất",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-14-8-2431498.html",
+    "title": "Lịch thi đấu bóng đá hôm nay 14/8",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/mu-gui-toi-hau-thu-chuyen-nhuong-cho-antony-2431680.html",
+    "title": "MU gửi tối hậu thư chuyển nhượng cho Antony",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/newcastle-hanh-dong-cung-dap-tat-man-noi-loan-cua-isak-2433958.html",
-    "desc_len": NaN,
-    "title": "Newcastle hành động 'cứng' dập tắt màn nổi loạn của Isak",
-    "num_words": 11.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/lai-thua-nu-viet-nam-nu-thai-lan-lo-lang-sea-games-2025-2433883.html",
-    "desc_len": NaN,
-    "title": "Liên tục thua nữ Việt Nam, Thái Lan lo hụt huy chương SEA Games",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/salah-lap-ky-luc-vo-doi-ngoai-hang-anh-isak-vang-vi-ngong-liverpool-2433922.html",
-    "desc_len": NaN,
-    "title": "Salah lập kỷ lục vô đối Ngoại hạng Anh, Isak vắng vì ngóng Liverpool",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/mbappe-giai-cuu-real-madrid-1-0-osasuna-tiet-lo-dieu-xabi-yeu-cau-2433882.html",
-    "desc_len": NaN,
-    "title": "Mbappe tuyên bố sau ‘giải cứu’ Real Madrid, tiết lộ điều Xabi yêu cầu",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/gia-tri-v-league-tang-vot-thinh-vuong-that-hay-chi-la-bong-bong-2433806.html",
-    "desc_len": NaN,
-    "title": "Giá trị V-League tăng vọt: Thịnh vượng thật hay chỉ là 'bong bóng'?",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/hai-lan-thang-thai-lan-hlv-mai-duc-chung-noi-gi-2433801.html",
-    "desc_len": NaN,
-    "title": "Hai lần thắng Thái Lan, HLV Mai Đức Chung nói gì?",
-    "num_words": 11.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/nhan-dinh-cahn-vs-bg-pathum-19h-ngay-20-8-2433886.html",
-    "desc_len": NaN,
-    "title": "Nhận định CAHN vs BG Pathum: Ra quân chiến thắng",
-    "num_words": 10.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/lamine-yamal-chi-hon-10-000-euro-dem-du-hi-voi-ban-gai-boc-lua-2433864.html",
-    "desc_len": NaN,
-    "title": "Lamine Yamal chi hơn 10.000 euro/đêm ‘du hí’ với bạn gái bốc lửa",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/lamine-yamal-dang-yeu-de-hinh-nen-dien-thoai-ban-gai-moi-2432093.html",
-    "desc_len": NaN,
-    "title": "Lamine Yamal đang yêu, để hình nền điện thoại bạn gái mới",
-    "num_words": 12.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/newcastle-hanh-dong-cung-dap-tat-man-noi-loan-cua-isak-2433958.html",
-    "desc_len": 19.0,
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/lanh-dao-mu-gat-y-tuong-chieu-mo-dibu-martinez-cua-amorim-2433876.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/fan-mu-trut-gian-len-buc-tranh-tuong-hinh-garnacho-2433150.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/truc-tiep-bong-da-bg-pathum-vs-cahn-cup-cac-clb-dong-nam-a-2025-2434081.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/garnacho-tu-choi-ong-lon-chau-au-khien-sep-mu-nong-mat-2434016.html",
-    "desc_len": NaN,
     "title": NaN,
     "num_words": NaN,
-    "content_len": 185.0
+    "content_len": 185.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/tu-thang-1-2026-se-thu-phi-18-cao-toc-do-nha-nuoc-dau-tu-2434148.html",
-    "desc_len": NaN,
-    "title": "Danh sách 18 cao tốc dự kiến thu phí từ tháng 1/2026",
-    "num_words": 12.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/tiep-tuc-chi-tra-dot-3-cho-cac-trai-chu-vu-van-thinh-phat-2434155.html",
-    "desc_len": NaN,
-    "title": "Tiếp tục chi trả đợt 3 cho 42.141 trái chủ vụ Vạn Thịnh Phát",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/nhung-lo-trinh-tranh-duong-cam-phuc-vu-dieu-binh-dieu-hanh-2-9-2434085.html",
-    "desc_len": NaN,
-    "title": "Những lộ trình tránh đường cấm phục vụ diễu binh, diễu hành 2/9",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/clip-gac-chan-tu-dong-nang-len-khi-tau-hoa-lao-den-rat-nhanh-2434046.html",
-    "desc_len": NaN,
-    "title": "Clip gác chắn tự động nâng lên khi tàu hỏa lao đến rất nhanh",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/tu-thang-1-2026-se-thu-phi-18-cao-toc-do-nha-nuoc-dau-tu-2434148.html",
-    "desc_len": 58.0,
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-nu-myanmar-vs-u23-australia-chung-ket-giai-dong-nam-a-2025-2433500.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-nu-viet-nam-vs-thai-lan-tranh-hang-3-giai-dong-nam-a-2025-2433498.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-20-8-2433518.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-20-8-2433521.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-giai-bong-chuyen-nu-vo-dich-the-gioi-2025-moi-nhat-2433668.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 195.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-19-8-2433264.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-19-8-2433267.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/giai-pickleball-doanh-nhan-tre-viet-nam-co-tien-thuong-1-5-ti-dong-2433389.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 182.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-serie-a-2025-26-moi-nhat-2433323.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-bundesliga-2025-26-moi-nhat-2433290.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-mu-0-1-arsenal-vong-1-ngoai-hang-anh-2432904.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-bong-da-ligue-1-2025-26-moi-nhat-2433129.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-18-8-2432962.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-ligue-1-2024-25-moi-nhat-2433123.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ligue-1-2025-26-moi-nhat-2433108.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-chelsea-0-0-crystal-palace-vong-1-ngoai-hang-anh-2432906.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-18-8-2432964.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ha-tinh-vs-ninh-binh-vong-1-vleague-2025-26-2432953.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hagl-vs-becamex-tp-hcm-vong-1-vleague-2025-26-2432918.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/tphcm-1-xep-nhat-giai-roller-sport-vo-dich-quoc-gia-2025-2432966.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 191.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-wolves-0-4-man-city-vong-1-ngoai-hang-anh-2432642.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-17-8-2432677.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ca-tp-hcm-2-1-ha-noi-vong-1-v-league-2025-26-2432707.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-17-8-2432678.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-nam-dinh-vs-hai-phong-vong-1-v-league-2025-26-2432706.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-aston-villa-0-0-newcastle-vong-1-ngoai-hang-anh-2432636.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-nu-viet-nam-1-2-u23-australia-ban-ket-giai-dong-nam-a-2025-2432666.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nhung-khoanh-khac-dep-ngay-u21-viet-nam-chia-tay-giai-the-gioi-2432780.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 190.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-ngoai-hang-anh-2025-26-vong-2-moi-nhat-2432737.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-la-liga-2025-26-moi-nhat-2432071.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-vong-2-v-league-2025-26-moi-nhat-2432734.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 10.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/link-xem-truc-tiep-bong-da-nu-viet-nam-vs-u23-australia-hom-nay-16-8-2025-2432662.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 144.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-chung-ket-bong-da-nu-dong-nam-a-2025-moi-nhat-2432741.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 61.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-chuyen-nu-u21-viet-nam-3-0-dominica-ngang-cao-dau-ra-ve-2432651.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-la-liga-2025-26-moi-nhat-2432063.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-ngoai-hang-anh-2025-26-vong-1-bxh-ngoai-hang-anh-moi-nhat-2432601.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-ngoai-hang-anh-2025-26-moi-nhat-2431927.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-16-8-2432216.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ngoai-hang-anh-2025-26-vong-1-moi-nhat-2432600.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-16-8-2025-2432220.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cahn-va-the-cong-viettel-dau-nhau-toe-lua-ngay-mo-man-v-league-2432498.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 194.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bang-xep-hang-v-league-2025-26-vong-1-moi-nhat-2432584.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 10.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-cahn-vs-the-cong-viettel-vong-1-vleague-2025-26-2432256.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-ngoai-hang-anh-2025-26-moi-nhat-2431919.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-chuyen-nu-u21-viet-nam-vs-chile-u21-the-gioi-2025-2432246.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-15-8-2431857.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ket-qua-bong-da-hom-nay-15-8-2431859.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/doi-bong-cu-cua-tien-linh-dat-muc-tieu-top-3-v-league-2025-26-2432134.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 150.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/bong-da-viet-nam-sap-dau-thai-lan-malaysia-tai-tphcm-2432127.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 159.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-la-liga-2025-26-moi-nhat-2431929.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 134.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-ngoai-hang-anh-2025-26-moi-nhat-2427675.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 122.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-vong-1-v-league-2025-26-moi-nhat-2431868.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 10.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lich-thi-dau-bong-da-hom-nay-14-8-2431498.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 7.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/van-toan-phau-thuat-thanh-cong-lo-hen-luot-di-v-league-va-tuyen-viet-nam-2431758.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 194.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/thieu-ta-cong-an-bi-chem-trong-thuong-khi-dang-lam-nhiem-vu-2433107.html",
+    "title": "Thiếu tá công an bị chém trọng thương",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hon-1-000-chuyen-bay-bi-huy-2432374.html",
+    "title": "Hơn 1.000 chuyến bay bị hủy",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
   },
   {
     "url": "https://vietnamnet.vn/cong-an-truy-tim-tai-xe-o-to-bo-mac-nam-thanh-nien-lai-xe-may-sau-va-cham-2434088.html",
-    "desc_len": NaN,
     "title": NaN,
     "num_words": NaN,
-    "content_len": 168.0
+    "content_len": 168.0,
+    "desc_len": NaN
   },
   {
-    "url": "https://vietnamnet.vn/xuc-dong-uoc-nguyen-tuoi-80-cua-nsnd-bach-tuyet-2433833.html",
-    "desc_len": NaN,
-    "title": "Xúc động ước nguyện tuổi 80 của NSND Bạch Tuyết",
-    "num_words": 10.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/gio-ngang-khoang-troi-xanh-tap-6-my-anh-mau-thuan-voi-chong-2433891.html",
-    "desc_len": NaN,
-    "title": "'Gió ngang khoảng trời xanh' tập 6: Mỹ Anh mâu thuẫn với chồng",
-    "num_words": 13.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/cuoc-song-nhieu-tran-tro-cua-dai-ta-cong-an-tran-nhuong-o-tuoi-73-2430570.html",
-    "desc_len": NaN,
-    "title": "Niềm vui và nỗi niềm tuổi xế chiều của Đại tá, NSND Trần Nhượng",
-    "num_words": 14.0,
-    "content_len": NaN
-  },
-  {
-    "url": "https://vietnamnet.vn/vinh-du-dac-biet-cua-thuong-uy-ngoc-han-giong-doc-thuyet-minh-ngay-2-9-2433643.html",
-    "desc_len": 52.0,
+    "url": "https://vietnamnet.vn/phat-hien-2-thi-the-phan-huy-duoi-muong-nuoc-o-nghe-an-2433818.html",
     "title": NaN,
     "num_words": NaN,
-    "content_len": NaN
+    "content_len": 168.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nguoi-me-om-con-5-thang-tuoi-tu-tu-o-ninh-binh-tiet-lo-ly-do-xot-xa-2433700.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 185.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/lat-xe-khach-cho-46-nguoi-tren-duong-ho-chi-minh-2433543.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 174.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/xe-khach-va-cham-o-to-7-cho-trong-ham-deo-ngang-2-nguoi-tu-vong-2433062.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 170.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cong-an-vao-cuoc-dieu-tra-vu-viec-nghi-vo-dung-dao-dam-chet-chong-tai-phu-tho-2433001.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 148.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ke-bien-thai-ke-dao-vao-co-be-gai-12-tuoi-de-hiep-dam-nhieu-lan-2432349.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 173.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/rao-ban-tui-hieu-louis-vuitton-chanel-gucci-ysl-de-chiem-doat-hon-6-ty-dong-2432328.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 148.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/cong-an-ha-noi-phat-lenh-truy-na-ong-doan-bao-chau-2432115.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 116.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/thieu-ta-bien-phong-tu-vong-khi-lam-nhiem-vu-2431949.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 153.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nam-thanh-nien-di-xe-may-tu-vong-sau-cu-tong-duoi-o-to-cuu-ho-2431968.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 175.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/khat-vong-moi-cua-ca-si-le-viet-anh-2433802.html",
+    "title": "Khát vọng mới của ca sĩ Lê Việt Anh",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ca-si-lam-bao-ngoc-giong-khung-not-cao-chot-vot-nhung-2431775.html",
+    "title": "Ca sĩ Lâm Bảo Ngọc lãi to",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/nghe-si-phuoc-sang-nguy-kich-2432558.html",
+    "title": "Nghệ sĩ Phước Sang nhập viện cấp cứu",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/tiec-cho-ca-si-bich-phuong-2426856.html",
+    "title": "Tiếc cho ca sĩ Bích Phương",
+    "num_words": 6.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/gs-ts-tu-thi-loan-duoc-bau-lam-chu-tich-2432952.html",
+    "title": "GS.TS Từ Thị Loan được bầu làm Chủ tịch",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/hinh-anh-chua-tung-co-o-san-khau-kich-2432682.html",
+    "title": "Hình ảnh chưa từng có ở sân khấu kịch",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/tuan-tran-va-phuong-anh-dao-qua-dep-doi-tai-hop-trong-phim-moi-2431327.html",
+    "title": "Tuấn Trần và Phương Anh Đào quá đẹp đôi",
+    "num_words": 9.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/vtv-concert-an-tuong-hoanh-trang-2430470.html",
+    "title": "VTV concert: Ấn tượng, hoành tráng và...",
+    "num_words": 7.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/ca-si-vy-oanh-bat-ngo-xin-hat-2430430.html",
+    "title": "Ca sĩ Vy Oanh bất ngờ xin hát",
+    "num_words": 8.0,
+    "content_len": NaN,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/tiec-cho-ca-si-bich-phuong-2426856.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": NaN,
+    "desc_len": 19.0
+  },
+  {
+    "url": "https://vietnamnet.vn/nu-thuong-uy-dam-nhan-giong-doc-mien-nam-trong-le-dieu-binh-2-9-la-ai-2431200.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 0.0,
+    "desc_len": NaN
+  },
+  {
+    "url": "https://vietnamnet.vn/sau-son-tung-m-tp-den-luot-ca-si-jack-vuong-on-ao-lien-quan-cuong-che-thue-2431010.html",
+    "title": NaN,
+    "num_words": NaN,
+    "content_len": 169.0,
+    "desc_len": NaN
   }
 ]

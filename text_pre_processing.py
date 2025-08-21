@@ -52,11 +52,11 @@ def run(args, file):
     invalid_titles, invalid_desc, invalid_content = [], [], []
 
     for i, row in df.iterrows():
-        valid, n = validate_text(row["title"], 15, 30)
+        valid, n = validate_text(row["title"], 10, 30)
         if not valid:
             invalid_titles.append({"url": row["url"], "title": row["title"], "num_words": n})
 
-        valid, n = validate_text(row["description"], 20, 50)
+        valid, n = validate_text(row["description"], 20, 100)
         if not valid:
             invalid_desc.append({"url": row["url"], "desc_len": n})
 
@@ -74,14 +74,17 @@ def run(args, file):
         # print(pd.DataFrame(invalid_content))
 
         invalid_data = pd.DataFrame(invalid_titles + invalid_desc + invalid_content)
-        # invlid_data.to_json("invalid_data.json", orient="records", lines=True, force_ascii=False)
+        # invalid_data.to_json("invalid_data.json", orient="records", lines=True, force_ascii=False)
+    invalid_title_urls = [item["url"] for item in invalid_titles]
+    invalid_desc_urls = [item["url"] for item in invalid_desc]
+    invalid_content_urls = [item["url"] for item in invalid_content]
 
-    # 2. Tiền xử lý
-    # ...existing code...
+    invalid_urls = set(invalid_title_urls + invalid_desc_urls + invalid_content_urls)
+    df = df[~df["url"].isin(invalid_urls)].reset_index(drop=True)
+# 2. Tiền xử lý
     df["title_clean"] = df["title"].apply(lambda x: preprocess_text(args, x))
     df["desc_clean"]  = df["description"].apply(lambda x: preprocess_text(args, x))
     df["content_clean"] = df["content"].apply(lambda x: preprocess_text(args, x))
-# ...existing code...
     # print(df.head())
     return df, invalid_data
 def main(args):
@@ -106,7 +109,7 @@ def main(args):
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             json.dump(data.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
-        print(f"[INFO] Đã lưu kết quả vào file {args.output}")
+        print(f"[INFO] Đã lưu {len(data)} bài báo vào file {args.output}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Xử lý văn bản")
