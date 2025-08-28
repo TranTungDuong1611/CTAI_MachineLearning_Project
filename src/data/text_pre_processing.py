@@ -56,13 +56,13 @@ def mapping_category(df):
     with open(config["DATA"]["MAPPING_CATEGORIES"], 'r') as file:
         cat_dict = json.load(file)
 
-    list_cats = set(cat_dict.keys())
+    list_cats = [cat.lower() for cat in set(cat_dict.keys())]
 
     # Keep only rows where metadata["cat"] is in cat_dict
-    df = df[df["metadata"].apply(lambda meta: meta["cat"] in list_cats)].copy()
+    df = df[df["metadata"].apply(lambda meta: meta["cat"].lower() in list_cats)].copy()
 
     # Map categories
-    df["metadata"] = df["metadata"].apply(lambda meta: {**meta, "cat": cat_dict[meta["cat"]]})
+    df["metadata"] = df["metadata"].apply(lambda meta: {**meta, "cat": cat_dict[meta["cat"].lower()]})
     
     return df
 
