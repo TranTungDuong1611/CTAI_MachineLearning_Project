@@ -4,16 +4,27 @@ import json
 import pandas as pd
 import re 
 from underthesea import word_tokenize
-from sklearn.feature_extraction.text import TfidfVectorizer
+from tqdm import tqdm
+
+# Load config file
+with open('config.json', 'r') as f:
+    config = json.load(f)
+
 
 def validate_text(text, min_len, max_len=None):
-    n = len(text.split())
+    n = len(text.strip().split())
     if n < min_len or (max_len and n > max_len):
         return False, n
     return True, n
 
+
 def remove_stop_words(args, text):
-    with open(args.stop_words, 'r', encoding="utf-8") as f:
+    if args.dash:
+        stop_words_path = config["DATA"]["STOP_WORDS_DASH"]
+    else:
+        stop_words_path = config["DATA"]["STOP_WORDS"]
+
+    with open(stop_words_path, 'r', encoding="utf-8") as f:
         stopwords = f.readlines()
         stop_set = list(set(m.strip() for m in stopwords))
     tmp = text.split(' ')
@@ -23,9 +34,11 @@ def remove_stop_words(args, text):
     results = " ".join(tmp)
     return results
 
+
 def preprocess_text(args, text):
     if not isinstance(text, str):
         return ""
+    
     text = text.lower()
     text = re.sub(r"http\S+|www\S+", " ", text)         # bỏ URL
     text = re.sub(r"[\n\r\t]", " ", text)  
@@ -37,6 +50,23 @@ def preprocess_text(args, text):
     # tokens = re.sub(r"[\n\r\t]", " ", tokens)         
     return tokens
 
+
+def mapping_category(df):
+    # Open file mapping
+    with open(config["DATA"]["MAPPING_CATEGORIES"], 'r') as file:
+        cat_dict = json.load(file)
+
+    list_cats = set(cat_dict.keys())
+
+    # Keep only rows where metadata["cat"] is in cat_dict
+    df = df[df["metadata"].apply(lambda meta: meta["cat"] in list_cats)].copy()
+
+    # Map categories
+    df["metadata"] = df["metadata"].apply(lambda meta: {**meta, "cat": cat_dict[meta["cat"]]})
+    
+    return df
+
+
 def run(args, file):
     with open(file, "r", encoding="utf-8") as f:
         data = json.load(f)
@@ -44,10 +74,10 @@ def run(args, file):
 
     print(f"[INFO] Đã tải {len(df)} bài báo từ {file}")
 
-    # 1. Kiểm tra tính hợp lệ
+    # 1. Check the validation of documents
     invalid_titles, invalid_desc, invalid_content = [], [], []
 
-    for i, row in df.iterrows():
+    for i, row in tqdm(df.iterrows()):
         valid, n = validate_text(row["title"], 4, 50)
         if not valid:
             invalid_titles.append({"url": row["url"], "title": row["title"], "num_words": n})
@@ -60,48 +90,48 @@ def run(args, file):
         if not valid:
             invalid_content.append({"url": row["url"], "content_len": n})
 
-        # print("\n--- INVALID TITLES ---")
-        # print(pd.DataFrame(invalid_titles))
-
-        # print("\n--- INVALID DESCRIPTIONS ---")
-        # print(pd.DataFrame(invalid_desc))
-
-        # print("\n--- INVALID CONTENT ---")
-        # print(pd.DataFrame(invalid_content))
-
         invalid_data = pd.DataFrame(invalid_titles + invalid_desc + invalid_content)
-        # invalid_data.to_json("invalid_data.json", orient="records", lines=True, force_ascii=False)
+        
     invalid_title_urls = [item["url"] for item in invalid_titles]
     invalid_desc_urls = [item["url"] for item in invalid_desc]
     invalid_content_urls = [item["url"] for item in invalid_content]
 
     invalid_urls = set(invalid_title_urls + invalid_desc_urls + invalid_content_urls)
     df = df[~df["url"].isin(invalid_urls)].reset_index(drop=True)
-# 2. Tiền xử lý
+
+    # 2. Mapping metadata
+    df = mapping_category(df)
+    
+    # 3. Preprocessing
     df["title_clean"] = df["title"].apply(lambda x: preprocess_text(args, x))
     df["desc_clean"]  = df["description"].apply(lambda x: preprocess_text(args, x))
     df["content_clean"] = df["content"].apply(lambda x: preprocess_text(args, x))
-    # print(df.head())
+
     return df, invalid_data
+
+
 def main(args):
     data_path = args.input
+
+    # Process data
     data, invalid_data = run(args, data_path)
-    # data = pd.concat([data, df], ignore_index=True)
-    # invalid_data = pd.concat([invalid_data, invalid], ignore_index=True)
     print(f"Số bài báo không hợp lệ {len(invalid_data)}")
-    with open("../../data/processed_data/invalid_data.json", "w", encoding="utf-8") as f:
+
+    # Save the invalid data
+    with open("data/processed_data/invalid_data.json", "w", encoding="utf-8") as f:
         json.dump(invalid_data.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
 
+    # Save the valid data
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
             json.dump(data.to_dict(orient="records"), f, ensure_ascii=False, indent=2)
         print(f"[INFO] Đã lưu {len(data)} bài báo vào file {args.output}")
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Xử lý văn bản")
     parser.add_argument("--input", type=str, required=True, help="Đường dẫn tới file JSON")
     parser.add_argument("--dash", action="store_true", help="Sử dụng stopwords dạng gạch dưới")
-    parser.add_argument("--stop_words", type=str, default="vietnamese-stopwords.txt", help="Đường dẫn tới file stopwords")
     parser.add_argument("--output", type=str, help="Đường dẫn tới file xuất kết quả")
     args = parser.parse_args()
 

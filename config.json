@@ -1,0 +1,8 @@
+{
+    "DATA":
+    {
+        "STOP_WORDS_DASH": "data/stop_words/vietnamese-stopwords-dash.txt",
+        "STOP_WORDS": "data/stop_words/vietnamese-stopwords.txt",
+        "MAPPING_CATEGORIES": "data/mapping_categories.json"
+    }
+}
