@@ -1,0 +1,12 @@
+[
+  "text_length",
+  "word_count",
+  "avg_word_length",
+  "sentence_count",
+  "exclamation_count",
+  "question_count",
+  "comma_count",
+  "uppercase_ratio",
+  "number_count",
+  "special_char_count"
+]
