@@ -18,7 +18,7 @@ const App = () => {
     <BrowserRouter>
       <Layout>
         <Routes>
-          <Route path="/home" element={<NewWebsite />} />
+          <Route path="/" element={<NewWebsite />} />
           <Route path="/classify-summarize" element={<ClassificationSummationPage />} />
         </Routes>
       </Layout>
