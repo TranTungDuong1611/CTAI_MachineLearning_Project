@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 // Mock news data
 interface NewsArticle {
@@ -75,35 +76,6 @@ const newsData: NewsArticle[] = [
   },
 ];
 
-interface NavigationTabProps {
-  label: string;
-  isActive?: boolean;
-  onClick: () => void;
-  isHashTag?: boolean;
-}
-
-const NavigationTab: React.FC<NavigationTabProps> = ({
-  label,
-  isActive,
-  onClick,
-  isHashTag = false,
-}) => {
-  return (
-    <button
-      onClick={onClick}
-      className={`px-4 py-2 font-medium text-sm transition-colors duration-200 ${
-        isHashTag
-          ? "bg-gray-100 text-gray-700 rounded-full hover:bg-gray-200"
-          : isActive
-          ? "text-white bg-teal-500 border-b-2 border-teal-500"
-          : "text-gray-700 hover:text-teal-500 hover:border-b-2 hover:border-teal-300"
-      }`}
-    >
-      {isHashTag ? `# ${label}` : label}
-    </button>
-  );
-};
-
 interface NewsCardProps {
   article: NewsArticle;
 }
@@ -139,14 +111,11 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
 };
 
 const NewsWebsite: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("NÓNG");
+  const [activeTab] = useState("TRANG CHỦ");
   const [filteredNews, setFilteredNews] = useState<NewsArticle[]>(newsData);
 
-  const mainTabs = ["NÓNG", "MỚI", "VIDEO", "CHỦ ĐỀ"];
-  const hashTags = ["Năng lượng tích cực", "Nghị quyết 57", "Khám phá Việt Nam"];
-
   useEffect(() => {
-    if (activeTab === "NÓNG") {
+    if (activeTab === "TRANG CHỦ") {
       setFilteredNews(newsData);
     } else {
       setFilteredNews(newsData.filter((news) => news.category === activeTab));
@@ -155,33 +124,7 @@ const NewsWebsite: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto px-4">
-          {/* Navigation Tabs */}
-          <div className="flex items-center space-x-1 py-3 border-b">
-            {mainTabs.map((tab) => (
-              <NavigationTab
-                key={tab}
-                label={tab}
-                isActive={activeTab === tab}
-                onClick={() => setActiveTab(tab)}
-              />
-            ))}
-            <div className="flex-1"></div>
-            <div className="flex items-center space-x-2">
-              {hashTags.map((tag) => (
-                <NavigationTab
-                  key={tag}
-                  label={tag}
-                  isHashTag={true}
-                  onClick={() => console.log(`Clicked ${tag}`)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Main Content */}
       <main className="flex-grow max-w-6xl mx-auto px-4 py-6">
@@ -193,7 +136,7 @@ const NewsWebsite: React.FC = () => {
 
         {/* Load More Button */}
         <div className="text-center mt-8">
-          <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200 flex items-center mx-auto">
+          <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200 flex items-center mx-auto shadow-md">
             <span>Xem thêm tin tức</span>
             <i className="fas fa-arrow-down ml-2"></i>
           </button>
