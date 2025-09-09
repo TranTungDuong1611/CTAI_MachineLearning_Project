@@ -211,3 +211,4 @@ __marimo__/
 
 # TypeScript
 node_modules/
+.vite
