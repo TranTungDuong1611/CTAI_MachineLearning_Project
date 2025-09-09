@@ -6,6 +6,8 @@ import os
 import numpy as np
 from scipy import sparse
 import joblib
+from fe_utils import to_dense
+
 
 from sklearn.ensemble import StackingClassifier, RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
@@ -14,10 +16,6 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 
-
-def _to_dense(X):
-    from scipy import sparse as sp
-    return X.toarray() if sp.issparse(X) else X
 
 
 def train_and_evaluate(feature_dir: str, results_dir: str, cv: int = 6):
