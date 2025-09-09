@@ -37,7 +37,7 @@ const NavigationTab: React.FC<NavigationTabProps> = ({
 
 const Header: React.FC = () => {
   const mainTabs = [
-    { label: "TRANG CHỦ", path: "/home" },
+    { label: "TRANG CHỦ", path: "/" },
     { label: "PHÂN LOẠI - TÓM TẮT", path: "/classify-summarize" },
     { label: "CHỦ ĐỀ", path: "/clustering" },
   ];
