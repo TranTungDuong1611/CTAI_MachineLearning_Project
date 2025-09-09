@@ -6,7 +6,6 @@ import os
 import numpy as np
 from scipy import sparse
 import joblib
-from fe_utils import to_dense
 
 
 from sklearn.ensemble import StackingClassifier, RandomForestClassifier
@@ -17,6 +16,15 @@ from sklearn.preprocessing import FunctionTransformer
 from sklearn.metrics import accuracy_score, f1_score, classification_report, confusion_matrix
 
 
+def _to_dense(X):
+    # dùng khi pipeline có FunctionTransformer(_to_dense)
+    try:
+        return X.todense()
+    except Exception:
+        return X
+
+def identity(x):
+    return x
 
 def train_and_evaluate(feature_dir: str, results_dir: str, cv: int = 6):
     # Load data
