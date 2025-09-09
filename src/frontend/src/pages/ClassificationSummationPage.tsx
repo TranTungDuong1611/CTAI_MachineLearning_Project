@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const ClassificationSummationPage: React.FC = () => {
   const [inputText, setInputText] = useState("");
@@ -21,6 +22,9 @@ const ClassificationSummationPage: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-50">
+      {/* Header Section */}
+      <Header />
+
       {/* Input Section */}
       <section className="w-full flex justify-center py-10 flex-grow">
         <div className="w-1/2 bg-white p-8 rounded-3xl shadow-xl relative overflow-hidden">
