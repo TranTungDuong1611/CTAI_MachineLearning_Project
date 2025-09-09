@@ -1,16 +1,28 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
-
 import React from "react";
-import NewsWebsite from "../../pages/MainPage";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import NewWebsite from "./pages/MainPage.tsx";
+import ClassificationSummationPage from "./pages/ClassificationSummationPage.tsx";
 
-const App: React.FC = () => {
+const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="App">
-      <NewsWebsite />
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-grow">{children}</main>
+      <Footer />
     </div>
+  );
+};
+
+const App = () => {
+  return (
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route path="/home" element={<NewWebsite />} />
+          <Route path="/classify-summarize" element={<ClassificationSummationPage />} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
 
