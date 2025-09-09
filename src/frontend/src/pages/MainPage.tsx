@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 // Mock news data
 interface NewsArticle {
@@ -123,9 +121,7 @@ const NewsWebsite: React.FC = () => {
   }, [activeTab]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
-      <Header />
-
+    <div className="flex flex-col bg-white">
       {/* Main Content */}
       <main className="flex-grow max-w-6xl mx-auto px-4 py-6">
         <div className="grid grid-cols-2 gap-6">
@@ -142,8 +138,6 @@ const NewsWebsite: React.FC = () => {
           </button>
         </div>
       </main>
-
-      <Footer />
     </div>
   );
 };
