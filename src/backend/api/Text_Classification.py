@@ -22,19 +22,18 @@ app.config["JSON_AS_ASCII"] = False
 # MODEL_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__),
 #                                          "../../../results/models/Text_Classification"))
 
-@app.get("/classification")
+@app.post("/classification")
 def classification_get():
     data = request.get_json(silent=True) or {}
     text = data.get("text")
-    topk = int(data.get("topk", 0))
     if not text:
         return jsonify({"error": "Missing 'text' in JSON body"}), 400
     try:
-        return jsonify(classification.predict_one(text, topk)), 200
+        return jsonify(classification.predict_one(text)), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-@app.get("/summarize")
+@app.post("/summarize")
 def summarize_post():
     data = request.get_json(silent=True) or {}
     text = data.get("text")
@@ -43,7 +42,7 @@ def summarize_post():
 
     in_max_len  = int(data.get("in_max_len", 512))
     out_max_len = int(data.get("out_max_len", 128))
-    beams       = int(data.get("beams", 4)) # Nên để beams =2
+    beams       = int(data.get("beams", 2)) # Nên để beams =2
     nrng        = int(data.get("nrng", 3))
     do_sample   = bool(data.get("sample", False))
     temp        = float(data.get("temp", 1.0))
@@ -61,3 +60,4 @@ def summarize_post():
         return jsonify({"text": text, "summary": summary}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
