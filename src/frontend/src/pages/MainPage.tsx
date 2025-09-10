@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { getNews, getRandomNews } from '../api/MainPage';
 
-// Mock news data
 interface NewsArticle {
   id: number;
   title: string;
@@ -10,69 +10,6 @@ interface NewsArticle {
   thumbnail: string;
   category: string;
 }
-
-const newsData: NewsArticle[] = [
-  {
-    id: 1,
-    title: "Thủ tướng Campuchia gửi lời tới tân Thủ tướng Thái Lan",
-    source: "TTXVN",
-    time: "2 giờ",
-    views: "1013 lượt xem",
-    thumbnail:
-      "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "NÓNG",
-  },
-  {
-    id: 2,
-    title:
-      "Giá vàng khó bứt phá mạnh như trước, không nên mua đuổi theo thị trường",
-    source: "VietNamNet",
-    time: "3 giờ",
-    views: "3152 lượt xem",
-    thumbnail: "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "NÓNG",
-  },
-  {
-    id: 3,
-    title: "Điều ông Trump lo lắng nhất",
-    source: "ZNEWS",
-    time: "3 giờ",
-    views: "1233 lượt xem",
-    thumbnail: "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "MỚI",
-  },
-  {
-    id: 4,
-    title:
-      "Bắt Mạnh 'Gô' - triệt xóa tận gốc băng nhóm Vi 'Ngố' ở Thanh Hóa",
-    source: "Công an nhân dân",
-    time: "22 phút",
-    views: "142 lượt xem",
-    thumbnail: "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "NÓNG",
-  },
-  {
-    id: 5,
-    title:
-      "Vòng loại U23 châu Á: Tuyển Việt Nam quyết thắng Yemen để đi tiếp với ngôi đầu",
-    source: "VietnamPlus",
-    time: "27 phút",
-    views: "203 lượt xem",
-    thumbnail:
-      "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "THỂ THAO",
-  },
-  {
-    id: 6,
-    title: "Tuyển Anh tỉnh mộng trước 'tí hon' Andorra",
-    source: "Người Lao Động",
-    time: "1 giờ",
-    views: "1 lượt xem",
-    thumbnail:
-      "https://static-images.vnncdn.net/vps_images_publish/000001/000003/2024/8/23/su-hoi-sinh-cua-chang-ca-si-tre-tung-chim-sau-trong-giac-ngu-dong-suot-3-nam-428.jpg?width=0&s=AUzDKXWvoXd4dqET0AYRvw",
-    category: "THỂ THAO",
-  },
-];
 
 interface NewsCardProps {
   article: NewsArticle;
@@ -110,7 +47,35 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
 
 const NewsWebsite: React.FC = () => {
   const [activeTab] = useState("TRANG CHỦ");
-  const [filteredNews, setFilteredNews] = useState<NewsArticle[]>(newsData);
+  const [newsData, setNewsData] = useState<NewsArticle[]>([]);
+  const [filteredNews, setFilteredNews] = useState<NewsArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const fetchNewsData = async (isRandom: boolean = false) => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = isRandom ? await getRandomNews(12) : await getNews();
+      const fetchedNews = response.data as NewsArticle[];
+      setNewsData(fetchedNews);
+      
+      if (activeTab === "TRANG CHỦ") {
+        setFilteredNews(fetchedNews);
+      } else {
+        setFilteredNews(fetchedNews.filter((news: NewsArticle) => news.category === activeTab));
+      }
+    } catch (err) {
+      setError('Không thể tải dữ liệu tin tức. Vui lòng thử lại sau.');
+      console.error('Error fetching news:', err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchNewsData();
+  }, []);
 
   useEffect(() => {
     if (activeTab === "TRANG CHỦ") {
@@ -118,25 +83,77 @@ const NewsWebsite: React.FC = () => {
     } else {
       setFilteredNews(newsData.filter((news) => news.category === activeTab));
     }
-  }, [activeTab]);
+  }, [activeTab, newsData]);
+
+  if (loading) {
+    return (
+      <div className="flex flex-col bg-white">
+        <main className="flex-grow max-w-6xl mx-auto px-4 py-6">
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-teal-500 mx-auto mb-4"></div>
+            <p className="text-gray-600">Đang tải tin tức...</p>
+          </div>
+        </main>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col bg-white">
+        <main className="flex-grow max-w-6xl mx-auto px-4 py-6">
+          <div className="text-center py-12">
+            <div className="text-red-500 text-6xl mb-4">
+              <i className="fas fa-exclamation-triangle"></i>
+            </div>
+            <p className="text-red-600 mb-4">{error}</p>
+            <button 
+              onClick={() => fetchNewsData()}   // gọi mà không truyền tham số
+              className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200"
+            >
+              Thử lại
+            </button>
+          </div>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col bg-white">
       {/* Main Content */}
       <main className="flex-grow max-w-6xl mx-auto px-4 py-6">
-        <div className="grid grid-cols-2 gap-6">
-          {filteredNews.map((article) => (
-            <NewsCard key={article.id} article={article} />
-          ))}
-        </div>
+        {filteredNews.length === 0 ? (
+          <div className="text-center py-12">
+            <p className="text-gray-600">Không có tin tức nào để hiển thị.</p>
+          </div>
+        ) : (
+          <>
+            <div className="grid grid-cols-2 gap-6">
+              {filteredNews.map((article) => (
+                <NewsCard key={article.id} article={article} />
+              ))}
+            </div>
 
-        {/* Load More Button */}
-        <div className="text-center mt-8">
-          <button className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200 flex items-center mx-auto shadow-md">
-            <span>Xem thêm tin tức</span>
-            <i className="fas fa-arrow-down ml-2"></i>
-          </button>
-        </div>
+            {/* Action Buttons */}
+            <div className="text-center mt-8 space-x-4">
+              <button 
+                onClick={() => fetchNewsData(false)}
+                className="bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600 transition-colors duration-200 inline-flex items-center shadow-md"
+              >
+                <span>Làm mới tin tức</span>
+                <i className="fas fa-sync-alt ml-2"></i>
+              </button>
+              <button 
+                onClick={() => fetchNewsData(true)}
+                className="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 inline-flex items-center shadow-md"
+              >
+                <span>Tin tức ngẫu nhiên</span>
+                <i className="fas fa-random ml-2"></i>
+              </button>
+            </div>
+          </>
+        )}
       </main>
     </div>
   );
