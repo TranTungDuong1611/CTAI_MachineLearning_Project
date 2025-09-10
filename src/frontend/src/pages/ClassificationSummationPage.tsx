@@ -1,22 +1,69 @@
 import React, { useState } from "react";
+import { classifyText, formatClassificationResult, getConfidenceScore } from '../api/Classification';
 
 const ClassificationSummationPage: React.FC = () => {
   const [inputText, setInputText] = useState("");
   const [outputText, setOutputText] = useState("");
   const [category, setCategory] = useState("");
+  const [isClassifying, setIsClassifying] = useState(false);
+  const [isSummarizing, setIsSummarizing] = useState(false);
+  const [error, setError] = useState("");
+  const [confidence, setConfidence] = useState<number>(0);
 
-  const handleClassify = () => {
-    const categories = ["NÓNG", "MỚI", "THỂ THAO"];
-    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-    setCategory(randomCategory);
-    setOutputText(`Phân loại: ${randomCategory}`);
+  const handleClassify = async () => {
+    if (!inputText.trim()) {
+      setError("Vui lòng nhập văn bản để phân loại");
+      return;
+    }
+
+    setIsClassifying(true);
+    setError("");
+    setCategory("");
+    setOutputText("");
+
+    try {
+      const result = await classifyText(inputText);
+      const classificationResult = formatClassificationResult(result);
+      const confidenceScore = getConfidenceScore(result);
+      
+      setCategory(classificationResult);
+      setConfidence(confidenceScore);
+      setOutputText(`Phân loại: ${classificationResult}${
+        confidenceScore > 0 ? ` (Độ tin cậy: ${(confidenceScore * 100).toFixed(1)}%)` : ''
+      }`);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Có lỗi xảy ra khi phân loại văn bản';
+      setError(errorMessage);
+      setOutputText(`Lỗi: ${errorMessage}`);
+    } finally {
+      setIsClassifying(false);
+    }
   };
 
-  const handleSummarize = () => {
-    const summary = inputText
-      ? `${inputText.substring(0, 150)}...`
-      : "Vui lòng nhập văn bản để tóm tắt.";
-    setOutputText(summary);
+  const handleSummarize = async () => {
+    if (!inputText.trim()) {
+      setError("Vui lòng nhập văn bản để tóm tắt");
+      return;
+    }
+
+    setIsSummarizing(true);
+    setError("");
+    setCategory("");
+    setOutputText("");
+
+    try {
+      // For now, use a simple summarization (you can replace this with actual API call)
+      const summary = inputText.length > 150 
+        ? `${inputText.substring(0, 150)}...`
+        : inputText;
+      setOutputText(`Tóm tắt: ${summary}`);
+    } catch (err) {
+      const errorMessage = err instanceof Error ? err.message : 'Có lỗi xảy ra khi tóm tắt văn bản';
+      setError(errorMessage);
+      setOutputText(`Lỗi: ${errorMessage}`);
+    } finally {
+      setIsSummarizing(false);
+    }
   };
 
   const getCurrentDate = () => {
@@ -65,18 +112,40 @@ const ClassificationSummationPage: React.FC = () => {
                 onChange={(e) => setInputText(e.target.value)}
               />
               
+              {error && (
+                <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 text-sm">
+                  {error}
+                </div>
+              )}
+              
               <div className="grid grid-cols-2 gap-4">
                 <button
                   onClick={handleClassify}
-                  className="bg-black text-white font-bold py-3 px-4 hover:bg-gray-800 transition-colors font-serif"
+                  disabled={isClassifying || isSummarizing || !inputText.trim()}
+                  className="bg-black text-white font-bold py-3 px-4 hover:bg-gray-800 transition-colors font-serif disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center"
                 >
-                  PHÂN LOẠI
+                  {isClassifying ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      ĐANG PHÂN LOẠI...
+                    </>
+                  ) : (
+                    "PHÂN LOẠI"
+                  )}
                 </button>
                 <button
                   onClick={handleSummarize}
-                  className="bg-black text-white font-bold py-3 px-4 hover:bg-gray-800 transition-colors font-serif"
+                  disabled={isClassifying || isSummarizing || !inputText.trim()}
+                  className="bg-black text-white font-bold py-3 px-4 hover:bg-gray-800 transition-colors font-serif disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center"
                 >
-                  TÓM TẮT
+                  {isSummarizing ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      ĐANG TÓM TẮT...
+                    </>
+                  ) : (
+                    "TÓM TẮT"
+                  )}
                 </button>
               </div>
             </div>
@@ -102,6 +171,11 @@ const ClassificationSummationPage: React.FC = () => {
                       <span className="inline-block bg-black text-white px-3 py-1 text-sm font-bold font-serif">
                         CHUYÊN MỤC: {category}
                       </span>
+                      {confidence > 0 && (
+                        <span className="ml-2 inline-block bg-green-600 text-white px-2 py-1 text-xs font-bold">
+                          {(confidence * 100).toFixed(1)}% tin cậy
+                        </span>
+                      )}
                     </div>
                   )}
                   
@@ -119,6 +193,11 @@ const ClassificationSummationPage: React.FC = () => {
                         <p className="text-sm text-gray-600 italic">
                           * Nội dung được phân tích và xử lý bởi hệ thống AI
                         </p>
+                        {category && confidence > 0 && (
+                          <p className="text-xs text-gray-500 mt-1">
+                            Độ chính xác: {(confidence * 100).toFixed(2)}%
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
