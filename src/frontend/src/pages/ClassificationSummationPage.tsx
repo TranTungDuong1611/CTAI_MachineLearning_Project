@@ -184,7 +184,7 @@ const ClassificationSummationPage: React.FC = () => {
                   </h3>
                   
                   <div className="text-base leading-relaxed font-serif text-justify">
-                    <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-2 first-letter:leading-none">
+                    <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:mr-2 first-letter:inline-block">
                       {outputText.replace(/^(Tóm tắt: |Phân loại: )/, '')}
                     </p>
                     
