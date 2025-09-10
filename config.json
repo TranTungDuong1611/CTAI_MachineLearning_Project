@@ -3,6 +3,9 @@
     {
         "STOP_WORDS_DASH": "data/stop_words/vietnamese-stopwords-dash.txt",
         "STOP_WORDS": "data/stop_words/vietnamese-stopwords.txt",
-        "MAPPING_CATEGORIES": "data/mapping_categories.json"
+        "MAPPING_CATEGORIES": "data/mapping_categories.json",
+        "PROCESSED_DATA": "data/processed_data/processed_data.json",
+        "PROCESSED_DATA_DASH": "data/processed_data/processed_data_dash.json",
+        "PROCESSED_DATA_IMG_URL": "data/processed_data/filtered_news.json"
     }
 }
