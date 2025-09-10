@@ -12,7 +12,7 @@ from scipy.sparse import csr_matrix, hstack
 from joblib import load as joblib_load
 import pandas as pd
 
-MODEL_DIR = "/Users/anhquan/Workspace/CTAI_MachineLearning_Project/results/models/Text_Classification"
+MODEL_DIR = "../../../results/models/Text_Classification"
 
 
 def load_artifacts(model_dir: str):
