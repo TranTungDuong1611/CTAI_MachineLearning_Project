@@ -1,8 +1,7 @@
 import os
 import sys
 import json
-import random
-from typing import Dict, Any, List, Optional, Tuple
+from typing import Dict, Any, List, Optional
 from pydantic import BaseModel
 
 # Add path to access models and utilities
@@ -13,6 +12,12 @@ try:
 except ImportError as e:
     print(f"Warning: Could not import clustering model: {e}")
     clustering = None
+
+try:
+    from src.models.Text_Clustering.Text_cluster import VietnameseTextClustering
+except ImportError as e:
+    print(f"Warning: Could not import VietnameseTextClustering: {e}")
+    VietnameseTextClustering = None
 
 # Import the pick_random_items function
 def pick_random_items(data, n=20, seed=None, filter_fn=None):
@@ -63,7 +68,16 @@ class ClusteringService:
     
     def __init__(self):
         """Initialize the clustering service"""
-        pass
+        self._clustering_model = None
+    
+    def _get_clustering_model(self):
+        """Get clustering model instance (lazy initialization)"""
+        if self._clustering_model is None:
+            if VietnameseTextClustering is None:
+                return None
+            print("Initializing VietnameseTextClustering model...")
+            self._clustering_model = VietnameseTextClustering()
+        return self._clustering_model
     
     def get_clustered_articles(self, limit_per_cluster: int = 5, max_clusters: int = 6) -> List[ArticleCluster]:
         """
@@ -190,14 +204,15 @@ class ClusteringService:
                 articles = []
                 for i, article_data in enumerate(cluster_articles):
                     try:
+                        # Ensure all string fields have default values and are not None
                         article = ClusteredArticle(
                             id=theme["id"] * 1000 + i,
-                            url=article_data.get('url', ''),
-                            url_img=article_data.get('url_img', ''),
-                            title=article_data.get('title', ''),
-                            description=article_data.get('description', ''),
-                            content=article_data.get('content', ''),
-                            metadata=article_data.get('metadata', {}),
+                            url=article_data.get('url') or '',
+                            url_img=article_data.get('url_img') or 'https://via.placeholder.com/120x96?text=📰&bg=f3f4f6',
+                            title=article_data.get('title') or 'Untitled',
+                            description=article_data.get('description') or '',
+                            content=article_data.get('content') or '',
+                            metadata=article_data.get('metadata') or {},
                             cluster_id=theme["id"],
                             cluster_name=theme["name"]
                         )
@@ -250,6 +265,80 @@ class ClusteringService:
         """
         clusters = self.get_clustered_articles(limit_per_cluster=1, max_clusters=10)
         return [cluster.cluster_info for cluster in clusters]
+    
+    def get_sample_clusters(self, n_clusters: int = 3, k_nearest: int = 5) -> List[ArticleCluster]:
+        """
+        Get sample clusters using the VietnameseTextClustering model
+        
+        Args:
+            n_clusters (int): Number of clusters to sample
+            k_nearest (int): Number of articles per cluster
+            
+        Returns:
+            List[ArticleCluster]: List of sampled clusters with articles
+        """
+        try:
+            # Get clustering model (lazy initialization)
+            clustering_model = self._get_clustering_model()
+            
+            if clustering_model is None:
+                # Fallback to mock clusters if model not available
+                return self.get_clustered_articles(limit_per_cluster=k_nearest, max_clusters=n_clusters)
+            
+            # Get sample clusters from the model
+            sample_data = clustering_model.sample_clusters(n_clusters=n_clusters, k_nearest=k_nearest)
+            
+            # Group articles by cluster_id
+            cluster_dict = {}
+            for article_data in sample_data:
+                cluster_id = article_data.get('cluster_id', 0)
+                if cluster_id not in cluster_dict:
+                    cluster_dict[cluster_id] = []
+                cluster_dict[cluster_id].append(article_data)
+            
+            # Convert to ArticleCluster objects
+            clusters = []
+            for cluster_id, articles_data in cluster_dict.items():
+                articles = []
+                for i, article_data in enumerate(articles_data):
+                    try:
+                        # Ensure all string fields have default values and are not None
+                        article = ClusteredArticle(
+                            id=cluster_id * 1000 + i,
+                            url=article_data.get('url') or '',
+                            url_img=article_data.get('url_img') or 'https://via.placeholder.com/120x96?text=📰&bg=f3f4f6',
+                            title=article_data.get('title') or 'Untitled',
+                            description=article_data.get('description') or '',
+                            content=article_data.get('content') or '',
+                            metadata=article_data.get('metadata') or {},
+                            cluster_id=cluster_id,
+                            cluster_name=f"Cluster {cluster_id}"
+                        )
+                        articles.append(article)
+                    except Exception as e:
+                        print(f"Error creating article: {e}")
+                        continue
+                
+                if articles:
+                    cluster_info = ClusterInfo(
+                        cluster_id=cluster_id,
+                        cluster_name=f"Cluster {cluster_id}",
+                        article_count=len(articles),
+                        keywords=[]
+                    )
+                    
+                    cluster = ArticleCluster(
+                        cluster_info=cluster_info,
+                        articles=articles
+                    )
+                    clusters.append(cluster)
+            
+            return clusters
+            
+        except Exception as e:
+            print(f"Error in get_sample_clusters: {e}")
+            # Fallback to mock clusters
+            return self.get_clustered_articles(limit_per_cluster=k_nearest, max_clusters=n_clusters)
     
     def get_model_info(self) -> Dict[str, Any]:
         """

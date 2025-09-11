@@ -148,6 +148,36 @@ async def get_hot_news(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Hot news error: {str(e)}")
 
+# Sample clusters endpoint using VietnameseTextClustering
+@clustering_router.get("/api/sample-clusters", response_model=ClustersResponse)
+async def get_sample_clusters(
+    n_clusters: int = Query(default=3, ge=1, le=8, description="Number of clusters to sample"),
+    k_nearest: int = Query(default=5, ge=1, le=20, description="Number of articles per cluster")
+):
+    """
+    Get sample clusters using the VietnameseTextClustering model
+    
+    Parameters:
+    - n_clusters: Number of clusters to sample (1-8)
+    - k_nearest: Number of articles per cluster (1-20)
+    
+    Returns:
+    - Sample clusters with articles using real clustering algorithm
+    """
+    try:
+        clusters = clustering_service.get_sample_clusters(
+            n_clusters=n_clusters,
+            k_nearest=k_nearest
+        )
+        
+        return ClustersResponse(
+            clusters=clusters,
+            total_clusters=len(clusters)
+        )
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Sample clustering error: {str(e)}")
+
 # Legacy endpoint for backward compatibility
 @clustering_router.get("/clusters", response_model=List[ArticleCluster])
 async def get_clusters_legacy(
