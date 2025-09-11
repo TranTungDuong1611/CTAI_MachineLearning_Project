@@ -105,6 +105,35 @@ export const getClusterById = async (
   }
 };
 
+// Get sample clusters using VietnameseTextClustering model
+export const getSampleClusters = async (
+  nClusters: number = 3,
+  kNearest: number = 5
+): Promise<ClustersResponse> => {
+  try {
+    const response = await axios.get<ClustersResponse>(
+      `${API_URL}/api/sample-clusters`,
+      {
+        params: {
+          n_clusters: nClusters,
+          k_nearest: kNearest
+        },
+        timeout: 60000, // Increased timeout for clustering processing
+      }
+    );
+    return response.data;
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      throw new Error(
+        error.response?.data?.detail || 
+        error.message || 
+        'Failed to get sample clusters'
+      );
+    }
+    throw error;
+  }
+};
+
 // Get hot news articles (featured clusters)
 export const getHotNews = async (
   limitPerCluster: number = 4,
