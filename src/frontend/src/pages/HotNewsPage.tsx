@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getHotNews, getSourceFromUrl, getRelativeTimeString } from '../api/Clustering';
+import { getHotNews, getSampleClusters, getSourceFromUrl, getRelativeTimeString } from '../api/Clustering';
 import type { ArticleCluster, ClusteredArticle } from '../api/Clustering';
 
 interface ArticleCardProps {
@@ -239,6 +239,7 @@ const HotNewsPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
   const [refreshing, setRefreshing] = useState(false);
+  const [useSampleClusters, setUseSampleClusters] = useState(true);
 
   const fetchHotNews = async (isRefresh = false) => {
     try {
@@ -249,7 +250,15 @@ const HotNewsPage: React.FC = () => {
       }
       setError('');
       
-      const response = await getHotNews(4, 6); // 4 articles per cluster, 6 clusters max
+      let response;
+      if (useSampleClusters) {
+        // Use the new sample clusters API with real clustering
+        response = await getSampleClusters(6, 4); // 6 clusters, 4 articles per cluster
+      } else {
+        // Use the existing hot news API (mock clusters)
+        response = await getHotNews(4, 6); // 4 articles per cluster, 6 clusters max
+      }
+      
       setClusters(response.clusters);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Có lỗi xảy ra khi tải tin hot';
@@ -264,6 +273,11 @@ const HotNewsPage: React.FC = () => {
   useEffect(() => {
     fetchHotNews();
   }, []);
+
+  useEffect(() => {
+    fetchHotNews();
+  }, [useSampleClusters]);
+
 
   const handleRefresh = () => {
     fetchHotNews(true);
@@ -289,9 +303,37 @@ const HotNewsPage: React.FC = () => {
             </h1>
           </div>
           <div className="flex items-center justify-between">
-            <p className="text-gray-600 text-lg">
-              Cập nhật những tin tức được quan tâm nhiều nhất, phân nhóm theo chủ đề
-            </p>
+            <div>
+              <p className="text-gray-600 text-lg mb-3">
+                Cập nhật những tin tức được quan tâm nhiều nhất, phân nhóm theo chủ đề
+              </p>
+              {/* Clustering Mode Toggle */}
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-gray-700 font-medium">Chế độ phân cụm:</span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setUseSampleClusters(true)}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                      useSampleClusters
+                        ? 'bg-teal-500 text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    🤖 AI Clustering
+                  </button>
+                  <button
+                    onClick={() => setUseSampleClusters(false)}
+                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
+                      !useSampleClusters
+                        ? 'bg-teal-500 text-white'
+                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    }`}
+                  >
+                    📂 Theo chủ đề
+                  </button>
+                </div>
+              </div>
+            </div>
             <button 
               onClick={handleRefresh}
               disabled={refreshing}
