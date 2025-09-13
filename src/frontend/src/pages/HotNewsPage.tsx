@@ -113,9 +113,6 @@ const ClusterSection: React.FC<ClusterSectionProps> = ({ cluster }) => {
             <span className="text-lg">#</span>
             {cluster.cluster_info.cluster_name.toUpperCase()}
           </h2>
-          <span className="bg-white bg-opacity-20 text-white text-xs px-2 py-1 rounded-full font-medium">
-            {cluster.articles.length}
-          </span>
         </div>
       </div>
 
@@ -297,7 +294,6 @@ const HotNewsPage: React.FC = () => {
         {/* Header Section */}
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl">🔥</span>
             <h1 className="text-3xl font-bold text-gray-900">
               CHỦ ĐỀ
             </h1>
@@ -307,7 +303,7 @@ const HotNewsPage: React.FC = () => {
               <p className="text-gray-600 text-lg mb-3">
                 Cập nhật những tin tức được quan tâm nhiều nhất, phân nhóm theo chủ đề
               </p>
-              {/* Clustering Mode Toggle */}
+              {/* Clustering Mode Toggle
               <div className="flex items-center gap-3">
                 <span className="text-sm text-gray-700 font-medium">Chế độ phân cụm:</span>
                 <div className="flex items-center gap-2">
@@ -332,7 +328,7 @@ const HotNewsPage: React.FC = () => {
                     📂 Theo chủ đề
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
             <button 
               onClick={handleRefresh}
