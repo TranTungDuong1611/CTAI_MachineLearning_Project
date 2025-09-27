@@ -42,12 +42,6 @@ const Header: React.FC = () => {
     { label: "CHỦ ĐỀ", path: "/clustering" },
   ];
 
-  const hashTags = [
-    { label: "Năng lượng tích cực", path: "/hashtag/positive-energy" },
-    { label: "Nghị quyết 57", path: "/hashtag/resolution-57" },
-    { label: "Khám phá Việt Nam", path: "/hashtag/explore-vietnam" },
-  ];
-
   return (
     <header className="bg-gradient-to-r from-gray-800 via-gray-900 to-gray-800 shadow-2xl border-b-2 border-gray-700/50 relative overflow-hidden">
       {/* Background decoration */}
@@ -85,30 +79,6 @@ const Header: React.FC = () => {
           
           {/* Spacer */}
           <div className="flex-1"></div>
-          
-          {/* Hashtag Navigation */}
-          <nav className="flex items-center space-x-2 ml-8">
-            {hashTags.map((tag, index) => (
-              <React.Fragment key={tag.label}>
-                <div style={index !== 0 ? { marginRight: '0.5rem' , marginLeft: '0.5rem' } : {marginRight: '0.5rem'}}>
-                  <NavigationTab
-                    label={tag.label}
-                    to={tag.path}
-                    isHashTag={true}
-                  />
-                </div>
-                {index < hashTags.length - 1 && (
-                  <div className="mx-4 flex items-center">
-                    <img 
-                      src={verticalDivider} 
-                      alt="divider" 
-                      className="h-8 opacity-70 drop-shadow-sm"
-                    />
-                  </div>
-                )}
-              </React.Fragment>
-            ))}
-          </nav>
         </div>
       </div>
       

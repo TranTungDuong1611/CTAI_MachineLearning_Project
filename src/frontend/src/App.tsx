@@ -4,13 +4,13 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import NewWebsite from "./pages/MainPage.tsx";
 import ClassificationSummationPage from "./pages/ClassificationSummationPage.tsx";
+import HotNewsPage from "./pages/HotNewsPage.tsx";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      
-      {/* Nội dung chính sẽ chiếm hết khoảng trống */}
+
       <main className="flex-grow">{children}</main>
       
       <Footer />
@@ -26,6 +26,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<NewWebsite />} />
           <Route path="/classify-summarize" element={<ClassificationSummationPage />} />
+          <Route path="/clustering" element={<HotNewsPage />} />
         </Routes>
       </Layout>
     </BrowserRouter>

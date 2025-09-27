@@ -7,12 +7,14 @@ import os
 import sys
 import json
 import numpy as np
+sys.path.append(os.getcwd())
 
 from scipy.sparse import csr_matrix, hstack
-from joblib import load as joblib_load
+# from joblib import load as joblib_load
 import pandas as pd
+import joblib
 
-MODEL_DIR = "../../../results/models/Text_Classification"
+MODEL_DIR = "results/models/Text_Classification"
 
 
 def load_artifacts(model_dir: str):
@@ -36,12 +38,12 @@ def load_artifacts(model_dir: str):
     if missing:
         raise FileNotFoundError("Thiếu artifact: " + ", ".join(missing))
 
-    tfidf = joblib_load(tfidf_path)
-    scaler = joblib_load(scaler_path)
-    stat_features = joblib_load(statfeat_path)  # list[str]
-    label_encoder = joblib_load(le_path)
-    model = joblib_load(model_path)
-
+    tfidf = joblib.load(tfidf_path)
+    tfidf = joblib.load(tfidf_path)
+    scaler = joblib.load(scaler_path)
+    stat_features = joblib.load(statfeat_path)
+    label_encoder = joblib.load(le_path)
+    model = joblib.load(model_path)
     if not isinstance(stat_features, (list, tuple)) or len(stat_features) == 0:
         raise ValueError("stat_features.pkl không hợp lệ.")
 
@@ -89,7 +91,7 @@ def make_features_one(text: str, tfidf, scaler, stat_features_order):
 
 
 
-def predict_one(text: str, topk: int = 0):
+def predict_one(text: str, topk: int = 1):
     tfidf, scaler, stat_features, le, model = load_artifacts(MODEL_DIR)
     X = make_features_one(text, tfidf, scaler, stat_features)
 

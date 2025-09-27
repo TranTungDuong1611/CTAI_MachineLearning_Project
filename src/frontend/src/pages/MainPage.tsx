@@ -3,12 +3,12 @@ import { getNews, getRandomNews } from '../api/MainPage';
 
 interface NewsArticle {
   id: number;
+  url: string;
+  url_img: string;
   title: string;
-  source: string;
-  time: string;
-  views: string;
-  thumbnail: string;
-  category: string;
+  description: string;
+  content: string;
+  metadata: Record<string, any>;
 }
 
 interface NewsCardProps {
@@ -16,28 +16,57 @@ interface NewsCardProps {
 }
 
 const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
+  // Extract source from metadata or URL
+  const source = article.metadata?.author || 
+    (article.url.includes('vietnamnet') ? 'VietnamNet' : 
+     article.url.includes('vnexpress') ? 'VnExpress' : 
+     article.url.includes('tuoitre') ? 'Tuổi Trẻ' : 'Tin tức');
+     
+  // Extract time from metadata
+  const time = article.metadata?.published_date || 'Vài giờ trước';
+  
+  // Generate view count
+  const views = `${Math.floor(Math.random() * 5000) + 100} lượt xem`;
+  
+  const handleClick = () => {
+    if (article.url) {
+      window.open(article.url, '_blank');
+    }
+  };
+
   return (
-    <div className="flex bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+    <div className="flex bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden cursor-pointer" onClick={handleClick}>
       {/* Ảnh cố định bên trái */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 flex items-center justify-center">
         <img
-          src={article.thumbnail}
+          src={article.url_img}
           alt={article.title}
           className="w-[128px] h-[96px] object-cover rounded-md"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = 'https://via.placeholder.com/128x96?text=No+Image';
+          }}
         />
       </div>
 
       {/* Nội dung bên phải */}
       <div className="flex flex-col justify-between flex-1 p-4">
-        <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug hover:text-teal-600 cursor-pointer">
-          {article.title}
-        </h3>
-        <div className="flex items-center text-xs text-gray-500 space-x-3">
-          <span className="text-red-500 font-medium">{article.source}</span>
-          <span>{article.time}</span>
+        <div>
+          <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug hover:text-teal-600">
+            {article.title}
+          </h3>
+          {/* <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+            {article.description}
+          </p> */}
+        </div>
+        <div className="flex flex-col items-start text-xs text-gray-500 space-y-1">
+          <span className="text-red-500 font-medium">Tác giả: {source}</span>
+          <span>Ngày xuất bản: {time}</span>
           <span className="flex items-center">
             <i className="fas fa-eye mr-1"></i>
-            {article.views}
+            Lượt xem: {views}
+          </span>
+          <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
+            Danh mục: {article.metadata?.cat || 'Tin tức'}
           </span>
         </div>
       </div>
@@ -63,7 +92,7 @@ const NewsWebsite: React.FC = () => {
       if (activeTab === "TRANG CHỦ") {
         setFilteredNews(fetchedNews);
       } else {
-        setFilteredNews(fetchedNews.filter((news: NewsArticle) => news.category === activeTab));
+        setFilteredNews(fetchedNews.filter((news: NewsArticle) => news.metadata?.cat === activeTab));
       }
     } catch (err) {
       setError('Không thể tải dữ liệu tin tức. Vui lòng thử lại sau.');
@@ -81,7 +110,7 @@ const NewsWebsite: React.FC = () => {
     if (activeTab === "TRANG CHỦ") {
       setFilteredNews(newsData);
     } else {
-      setFilteredNews(newsData.filter((news) => news.category === activeTab));
+      setFilteredNews(newsData.filter((news) => news.metadata?.cat === activeTab));
     }
   }, [activeTab, newsData]);
 

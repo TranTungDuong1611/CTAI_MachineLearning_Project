@@ -18,12 +18,12 @@ export const getNewsById = async (id: number) => {
 
 // Tạo mới một news
 export const createNews = async (newsData: {
+  url: string;
+  url_img: string;
   title: string;
-  source: string;
-  time: string;
-  views: string;
-  thumbnail: string;
-  category: string;
+  description: string;
+  content: string;
+  metadata: Record<string, any>;
 }) => {
   return axios.post(`${API_URL}/api/news`, newsData, {
     headers: {
@@ -34,12 +34,12 @@ export const createNews = async (newsData: {
 
 // Cập nhật 1 news theo id
 export const updateNews = async (id: number, newsData: {
+  url?: string;
+  url_img?: string;
   title?: string;
-  source?: string;
-  time?: string;
-  views?: string;
-  thumbnail?: string;
-  category?: string;
+  description?: string;
+  content?: string;
+  metadata?: Record<string, any>;
 }) => {
   return axios.put(`${API_URL}/api/news/${id}`, newsData, {
     headers: {

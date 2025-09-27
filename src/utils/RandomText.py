@@ -4,7 +4,7 @@ import json
 Item = Any
 MaybeKeyed = Union[Item, Tuple[Any, Item]]
 
-with open ("/content/drive/MyDrive/Text_Cluster/processed_data/processed_data_dash.json", "r", encoding="utf-8") as f:
+with open ("data/processed_data/processed_data_dash.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 def pick_random_items(
