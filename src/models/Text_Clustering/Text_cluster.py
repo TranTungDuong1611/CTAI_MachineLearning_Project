@@ -1,15 +1,16 @@
 import json
 from sklearn.cluster import KMeans, AgglomerativeClustering
 from sklearn.metrics import silhouette_score
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sentence_transformers import SentenceTransformer
 import re
+import os
+import sys
 import hdbscan
 from sklearn.metrics.pairwise import cosine_distances
-import joblib
 import numpy as np
 import pandas as pd
 
+sys.path.append(os.getcwd())
 
 # Loại bỏ kí tự chữ số
 def remove_numbers(text):
@@ -59,63 +60,120 @@ def compute_mse(embeddings, labels):
     else:
         print("Không có cụm nào (toàn noise)")
         return None
-
+    
 
 class VietnameseTextClustering:
-    def __init__(self, ):
-        self.embedding_method = SentenceTransformer('intfloat/multilingual-e5-large-instruct')
-        self.vectorizer = None
-        # self.clustering_model = None
-    
-    # Loại bỏ số khỏi văn bản
+    def __init__(self):
+        # Load data but don't run clustering yet
+        with open("data/processed_data/processed_data_dash.json", "r", encoding="utf-8") as f:
+            self.data = json.load(f)
+            print(f"Đã tải {len(self.data)} bài báo từ file JSON.")
+
+        self.embedding_method = None  # Lazy load this too
+        self.vectors = None
+        self.labels = None
+        self.texts = None
+        self.metadata = None
+
+        # Pre compute the clusters
+        self.fit_predict(self.data, method='kmeans')
+
+    def _get_embedding_method(self):
+        """Lazy load the embedding model"""
+        if self.embedding_method is None:
+            print("Loading SentenceTransformer model...")
+            self.embedding_method = SentenceTransformer('intfloat/multilingual-e5-large-instruct')
+        return self.embedding_method
+
     def process_texts(self, texts):
-        processed_texts = [remove_numbers(text) for text in texts]
-        return processed_texts
-    
-    # Embedding văn bản
+        """Loại bỏ số khỏi văn bản."""
+        return [remove_numbers(text) for text in texts]
+
     def vectorize(self, texts):
-        embeddings = self.embedding_method.encode(
+        """Tạo embedding cho danh sách văn bản."""
+        embedding_method = self._get_embedding_method()
+        vectors = embedding_method.encode(
             texts,
-            batch_size=4,
+            batch_size=16,
             show_progress_bar=True,
             convert_to_numpy=True,
-            normalize_embeddings=True  # chuẩn hoá L2 -> phù hợp cosine
-            )
-        return embeddings
+            normalize_embeddings=True
+        )
+        return vectors
 
-    def cluster(self, embeddings, method='kmeans'):
+    def cluster(self, method='kmeans'):
         # Tìm số cụm tối ưu
         candidate_k = range(8, 20)
-        optimal_k, _ = find_best_k(embeddings, candidate_k)
+        optimal_k, _ = find_best_k(self.vectors, candidate_k)
         print("Số cụm tối ưu:", optimal_k)
 
-        # Phân cụm K-means
+        # Phân cụm với KMeans, HDBSCAN hoặc Hierarchical
         if method == 'kmeans':
-            kmeans = KMeans(
+            model = KMeans(
                 n_clusters=optimal_k,
                 random_state=42,
                 n_init="auto"
             )
-            labels = kmeans.fit_predict(embeddings)
+            labels = model.fit_predict(self.vectors)
 
         elif method == 'hdbscan':
-            cosine_distance_matrix = cosine_distances(embeddings).astype(np.float64)
-            hdbscan = hdbscan.HDBSCAN(min_cluster_size=5, metric='precomputed')
-            labels = hdbscan.fit_predict(cosine_distance_matrix)
+            cosine_distance_matrix = cosine_distances(self.vectors).astype(np.float64)
+            hdbscan_model = hdbscan.HDBSCAN(min_cluster_size=5, metric='precomputed')
+            labels = hdbscan_model.fit_predict(cosine_distance_matrix)
 
         elif method == 'hierarchical':
             hierarchial = AgglomerativeClustering(n_clusters=optimal_k, metric="euclidean", linkage="ward")
-            labels = hierarchial.fit_predict(embeddings)
+            labels = hierarchial.fit_predict(self.vectors)
+
+        else:
+            raise ValueError(f"Phương pháp phân cụm '{method}' không được hỗ trợ.")
 
         return labels
-    
-    def fit_predict(self, texts):
-        processed_texts = self.process_texts(texts)
-        vectors = self.vectorize(processed_texts)
-        labels = self.cluster(vectors)
+
+    def fit_predict(self, data, method='kmeans'):
         
-        # Đánh giá
-        metrics = compute_mse(vectors, labels)
-        
-        return labels, metrics
+        # Nhận dữ liệu JSON, chỉ lấy content_clean để phân cụm.
+
+        self.texts = [item["content_clean"] for item in data]
+        self.metadata = data  # Lưu lại toàn bộ metadata
+        self.vectors = self.vectorize(self.texts)
+        self.labels = self.cluster(method)
+        return self.labels
+
+    def sample_clusters(self, n_clusters=3, k_nearest=5, random_state=42):
+        """Trả về toàn bộ thông tin bài báo trong các cụm đã phân
+            Lấy k bài gần tâm nhất."""
+        # Chọn ngẫu nhiên n cụm
+        rng = np.random.default_rng(random_state)
+        unique_clusters = [c for c in np.unique(self.labels) if c != -1]
+        chosen_clusters = rng.choice(unique_clusters, size=min(n_clusters, len(unique_clusters)), replace=False)
+
+        # Lấy k bài gần centroid nhất từ mỗi cụm
+        results = []
+        for cluster_id in chosen_clusters:
+            indices = np.where(self.labels == cluster_id)[0]
+            cluster_vectors = self.vectors[indices]
+
+            # Tính khoảng cách đến centroid
+            centroid = np.mean(cluster_vectors, axis=0)
+            distances = cosine_distances(cluster_vectors, centroid.reshape(1, -1)).ravel()
+
+            nearest_indices = indices[np.argsort(distances)[:k_nearest]]
+
+            # Trả về toàn bộ thông tin bài báo cho những bài được chọn
+            for idx in nearest_indices:
+                article_info = self.metadata[idx]  
+                article_info["cluster_id"] = int(cluster_id)
+                results.append(article_info)
+
+        return results
+
+if __name__ == "__main__":
+    clustering_service = VietnameseTextClustering()
+    # Load data
+    with open("data/processed_data/processed_data_dash.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+        texts = [item['content'] for item in data if 'content' in item]
     
+    samples = clustering_service.sample_clusters(n_clusters=5, k_nearest=3)
+    print("Mẫu từ các cụm:", samples)
