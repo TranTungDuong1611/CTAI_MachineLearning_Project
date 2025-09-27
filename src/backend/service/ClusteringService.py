@@ -6,12 +6,7 @@ from pydantic import BaseModel
 
 # Add path to access models and utilities
 sys.path.append(os.getcwd())
-
-try:
-    from src.models.Text_Clustering import inference as clustering
-except ImportError as e:
-    print(f"Warning: Could not import clustering model: {e}")
-    clustering = None
+from src.utils.RandomText import pick_random_items
 
 try:
     from src.models.Text_Clustering.Text_cluster import VietnameseTextClustering
@@ -19,28 +14,12 @@ except ImportError as e:
     print(f"Warning: Could not import VietnameseTextClustering: {e}")
     VietnameseTextClustering = None
 
-# Import the pick_random_items function
-def pick_random_items(data, n=20, seed=None, filter_fn=None):
-    """Simple implementation of pick_random_items if not available"""
-    import random
-    if seed:
-        random.seed(seed)
-    
-    if isinstance(data, list):
-        items = data
-    elif isinstance(data, dict):
-        items = list(data.values())
-    else:
-        return []
-    
-    if filter_fn:
-        items = [x for x in items if filter_fn(x)]
-    
-    if not items:
-        return []
-    
-    k = min(n, len(items))
-    return random.sample(items, k)
+try:
+    from src.backend.service.OpenAIService import OpenAIService
+except ImportError as e:
+    print(f"Warning: Could not import OpenAIService: {e}")
+    OpenAIService = None
+
 
 class ClusterInfo(BaseModel):
     cluster_id: int
@@ -66,18 +45,33 @@ class ArticleCluster(BaseModel):
 class ClusteringService:
     """Service for text clustering operations"""
     
-    def __init__(self):
-        """Initialize the clustering service"""
-        self._clustering_model = None
+    _instance = None
+    _initialized = False
     
-    def _get_clustering_model(self):
-        """Get clustering model instance (lazy initialization)"""
-        if self._clustering_model is None:
-            if VietnameseTextClustering is None:
-                return None
-            print("Initializing VietnameseTextClustering model...")
+    def __new__(cls):
+        """Implement singleton pattern"""
+        if cls._instance is None:
+            print("🚀 Creating ClusteringService singleton instance")
+            cls._instance = super(ClusteringService, cls).__new__(cls)
+        else:
+            print("♻️ Reusing existing ClusteringService singleton")
+        return cls._instance
+    
+    def __init__(self):
+        """Initialize the clustering service only once"""
+        if not ClusteringService._initialized:
+            print(f"🚀 Initializing ClusteringService singleton (this should only happen once)... in in PID={os.getpid()}")
             self._clustering_model = VietnameseTextClustering()
-        return self._clustering_model
+            self.openai_service = self._get_openai_service()
+            ClusteringService._initialized = True
+            print("✅ ClusteringService singleton initialized successfully!")
+        else:
+            print(f"♻️ Reusing ClusteringService in PID={os.getpid()}")
+    
+    def _get_openai_service(self):
+        """Get OpenAI service instance (lazy initialization)"""
+        print("Initializing OpenAI service...")
+        return OpenAIService()
     
     def get_clustered_articles(self, limit_per_cluster: int = 5, max_clusters: int = 6) -> List[ArticleCluster]:
         """
@@ -101,7 +95,7 @@ class ClusteringService:
                 data = json.load(f)
             
             # If clustering model is available, use it for real clustering
-            if clustering is not None:
+            if self._clustering_model is not None:
                 return self._cluster_with_model(data, limit_per_cluster, max_clusters)
             else:
                 # Fallback: create mock clusters based on categories
@@ -114,9 +108,85 @@ class ClusteringService:
     def _cluster_with_model(self, data: List[dict], limit_per_cluster: int, max_clusters: int) -> List[ArticleCluster]:
         """Use actual clustering model to group articles"""
         try:
-            # This would implement real clustering logic
-            # For now, return mock clusters
-            return self._create_mock_clusters(data, limit_per_cluster, max_clusters)
+            # Get sample clusters from the model
+            sample_data = self._clustering_model.sample_clusters(
+                n_clusters=max_clusters,
+                k_nearest=limit_per_cluster
+            )
+
+            # Group articles by cluster_id
+            cluster_dict = {}
+            for article_data in sample_data:
+                cluster_id = article_data.get('cluster_id', 0)
+                if cluster_id not in cluster_dict:
+                    cluster_dict[cluster_id] = []
+                cluster_dict[cluster_id].append(article_data)
+
+            # Convert to ArticleCluster objects
+            clusters = []
+            cluster_articles_for_labeling = {}
+
+            for cluster_id, articles_data in cluster_dict.items():
+                articles = []
+                for i, article_data in enumerate(articles_data):
+                    try:
+                        # Ensure all string fields have default values and are not None
+                        article = ClusteredArticle(
+                            id=cluster_id * 1000 + i,
+                            url=article_data.get('url') or '',
+                            url_img=article_data.get('url_img') or 'https://via.placeholder.com/120x96?text=📰&bg=f3f4f6',
+                            title=article_data.get('title') or 'Untitled',
+                            description=article_data.get('description') or '',
+                            content=article_data.get('content') or '',
+                            metadata=article_data.get('metadata') or {},
+                            cluster_id=cluster_id,
+                            cluster_name=f"Cluster {cluster_id}"
+                        )
+                        articles.append(article)
+                    except Exception as e:
+                        print(f"Error creating article: {e}")
+                        continue
+
+                if articles:
+                    # Store articles data for OpenAI labeling
+                    cluster_articles_for_labeling[cluster_id] = articles_data
+
+                    cluster_info = ClusterInfo(
+                        cluster_id=cluster_id,
+                        cluster_name=f"Cluster {cluster_id}",
+                        article_count=len(articles),
+                        keywords=[]
+                    )
+
+                    cluster = ArticleCluster(
+                        cluster_info=cluster_info,
+                        articles=articles
+                    )
+                    clusters.append(cluster)
+
+            # Generate cluster labels using OpenAI
+            try:
+                if self.openai_service and self.openai_service.is_available():
+                    print("Generate label for clusters with openai")
+                    for cluster in clusters:
+                        cluster_id = cluster.cluster_info.cluster_id
+                        if cluster_id in cluster_articles_for_labeling:
+                            # Generate label using OpenAI
+                            label = self.openai_service.generate_cluster_label(
+                                cluster_articles_for_labeling[cluster_id], 
+                                max_words=5
+                            )
+                            # Update cluster info with generated label
+                            cluster.cluster_info.cluster_name = label
+                            # Also update all articles in this cluster
+                            for article in cluster.articles:
+                                article.cluster_name = label
+
+            except Exception as e:
+                print(f"Error generating OpenAI labels: {e}")
+                # Continue with default cluster names if OpenAI fails
+
+            return clusters
         except Exception as e:
             print(f"Error in clustering model: {e}")
             return self._create_mock_clusters(data, limit_per_cluster, max_clusters)
@@ -237,119 +307,32 @@ class ClusteringService:
         
         return clusters
     
-    def get_cluster_by_id(self, cluster_id: int, limit: int = 20) -> Optional[ArticleCluster]:
-        """
-        Get articles from a specific cluster
+# Global instance
+_service_instance = None
+
+def get_clustering_service():
+    """Return the singleton instance of ClusteringService"""
+    global _service_instance
+    if _service_instance is None:
+        _service_instance = ClusteringService()
+    return _service_instance
+
+async def initialize_clustering_on_startup():
+    """Initialize clustering model and run initial clustering on app startup"""
+    try:
+        # Get the singleton service
+        service = get_clustering_service()
         
-        Args:
-            cluster_id (int): The cluster ID
-            limit (int): Maximum articles to return
+        # Pre-warm the clustering model by running sample_clusters
+        if service._clustering_model is not None:
+            print("🔥 Pre-warming clustering model...")
+            # This will trigger the fit_predict if not already fitted
+            sample_clusters = service.get_clustered_articles(max_clusters=6, limit_per_cluster=4)
+            print(f"✅ Clustering pre-warmed successfully! Generated {len(sample_clusters)} sample clusters")
+        else:
+            print("⚠️ Clustering model not available, skipping pre-warming")
             
-        Returns:
-            Optional[ArticleCluster]: Cluster with articles or None
-        """
-        all_clusters = self.get_clustered_articles(limit_per_cluster=limit, max_clusters=10)
-        
-        for cluster in all_clusters:
-            if cluster.cluster_info.cluster_id == cluster_id:
-                return cluster
-        
-        return None
-    
-    def get_cluster_info(self) -> List[ClusterInfo]:
-        """
-        Get information about all available clusters
-        
-        Returns:
-            List[ClusterInfo]: List of cluster information
-        """
-        clusters = self.get_clustered_articles(limit_per_cluster=1, max_clusters=10)
-        return [cluster.cluster_info for cluster in clusters]
-    
-    def get_sample_clusters(self, n_clusters: int = 3, k_nearest: int = 5) -> List[ArticleCluster]:
-        """
-        Get sample clusters using the VietnameseTextClustering model
-        
-        Args:
-            n_clusters (int): Number of clusters to sample
-            k_nearest (int): Number of articles per cluster
-            
-        Returns:
-            List[ArticleCluster]: List of sampled clusters with articles
-        """
-        try:
-            # Get clustering model (lazy initialization)
-            clustering_model = self._get_clustering_model()
-            
-            if clustering_model is None:
-                # Fallback to mock clusters if model not available
-                return self.get_clustered_articles(limit_per_cluster=k_nearest, max_clusters=n_clusters)
-            
-            # Get sample clusters from the model
-            sample_data = clustering_model.sample_clusters(n_clusters=n_clusters, k_nearest=k_nearest)
-            
-            # Group articles by cluster_id
-            cluster_dict = {}
-            for article_data in sample_data:
-                cluster_id = article_data.get('cluster_id', 0)
-                if cluster_id not in cluster_dict:
-                    cluster_dict[cluster_id] = []
-                cluster_dict[cluster_id].append(article_data)
-            
-            # Convert to ArticleCluster objects
-            clusters = []
-            for cluster_id, articles_data in cluster_dict.items():
-                articles = []
-                for i, article_data in enumerate(articles_data):
-                    try:
-                        # Ensure all string fields have default values and are not None
-                        article = ClusteredArticle(
-                            id=cluster_id * 1000 + i,
-                            url=article_data.get('url') or '',
-                            url_img=article_data.get('url_img') or 'https://via.placeholder.com/120x96?text=📰&bg=f3f4f6',
-                            title=article_data.get('title') or 'Untitled',
-                            description=article_data.get('description') or '',
-                            content=article_data.get('content') or '',
-                            metadata=article_data.get('metadata') or {},
-                            cluster_id=cluster_id,
-                            cluster_name=f"Cluster {cluster_id}"
-                        )
-                        articles.append(article)
-                    except Exception as e:
-                        print(f"Error creating article: {e}")
-                        continue
-                
-                if articles:
-                    cluster_info = ClusterInfo(
-                        cluster_id=cluster_id,
-                        cluster_name=f"Cluster {cluster_id}",
-                        article_count=len(articles),
-                        keywords=[]
-                    )
-                    
-                    cluster = ArticleCluster(
-                        cluster_info=cluster_info,
-                        articles=articles
-                    )
-                    clusters.append(cluster)
-            
-            return clusters
-            
-        except Exception as e:
-            print(f"Error in get_sample_clusters: {e}")
-            # Fallback to mock clusters
-            return self.get_clustered_articles(limit_per_cluster=k_nearest, max_clusters=n_clusters)
-    
-    def get_model_info(self) -> Dict[str, Any]:
-        """
-        Get information about the clustering model
-        
-        Returns:
-            Dict[str, Any]: Model information
-        """
-        return {
-            "model_type": "text_clustering",
-            "description": "Text clustering model for Vietnamese news articles",
-            "status": "active" if clustering is not None else "mock",
-            "available_clusters": len(self.get_cluster_info())
-        }
+    except Exception as e:
+        print(f"Error during clustering initialization: {e}")
+        # Don't fail the entire app startup if clustering fails
+        pass

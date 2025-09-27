@@ -6,7 +6,7 @@ import os
 
 # Add service path
 sys.path.append(os.getcwd())
-from src.backend.service.ClusteringService import ClusteringService, ArticleCluster, ClusterInfo
+from src.backend.service.ClusteringService import get_clustering_service, ArticleCluster
 
 # Create router for clustering endpoints
 clustering_router = APIRouter()
@@ -15,18 +15,6 @@ clustering_router = APIRouter()
 class ClustersResponse(BaseModel):
     clusters: List[ArticleCluster]
     total_clusters: int
-
-class ClusterResponse(BaseModel):
-    cluster: ArticleCluster
-
-class ClusterInfoResponse(BaseModel):
-    clusters: List[ClusterInfo]
-
-class ModelInfoResponse(BaseModel):
-    model_info: Dict[str, Any]
-
-# Initialize service
-clustering_service = ClusteringService()
 
 # API Routes
 @clustering_router.get("/api/clusters", response_model=ClustersResponse)
@@ -45,6 +33,7 @@ async def get_clustered_articles(
     - List of clusters with their articles
     """
     try:
+        clustering_service = get_clustering_service() 
         clusters = clustering_service.get_clustered_articles(
             limit_per_cluster=limit_per_cluster,
             max_clusters=max_clusters
@@ -57,145 +46,3 @@ async def get_clustered_articles(
         
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Clustering error: {str(e)}")
-
-@clustering_router.get("/api/clusters/{cluster_id}", response_model=ClusterResponse)
-async def get_cluster_by_id(
-    cluster_id: int,
-    limit: int = Query(default=20, ge=1, le=50, description="Maximum articles to return")
-):
-    """
-    Get articles from a specific cluster
-    
-    Parameters:
-    - cluster_id: The cluster ID
-    - limit: Maximum articles to return (1-50)
-    
-    Returns:
-    - Cluster with articles
-    """
-    try:
-        cluster = clustering_service.get_cluster_by_id(cluster_id, limit)
-        
-        if not cluster:
-            raise HTTPException(status_code=404, detail="Cluster not found")
-        
-        return ClusterResponse(cluster=cluster)
-        
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Clustering error: {str(e)}")
-
-@clustering_router.get("/api/clusters/info", response_model=ClusterInfoResponse)
-async def get_cluster_info():
-    """
-    Get information about all available clusters
-    
-    Returns:
-    - List of cluster information
-    """
-    try:
-        cluster_info = clustering_service.get_cluster_info()
-        return ClusterInfoResponse(clusters=cluster_info)
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error getting cluster info: {str(e)}")
-
-@clustering_router.get("/api/clustering/model-info", response_model=ModelInfoResponse)
-async def get_clustering_model_info():
-    """
-    Get information about the clustering model
-    
-    Returns:
-    - Model information
-    """
-    try:
-        model_info = clustering_service.get_model_info()
-        return ModelInfoResponse(model_info=model_info)
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error getting model info: {str(e)}")
-
-# Additional endpoint for hot news (featured clusters)
-@clustering_router.get("/api/hot-news", response_model=ClustersResponse)
-async def get_hot_news(
-    limit_per_cluster: int = Query(default=4, ge=1, le=10, description="Articles per cluster for hot news"),
-    featured_clusters: int = Query(default=4, ge=1, le=8, description="Number of featured clusters")
-):
-    """
-    Get hot news articles grouped by featured clusters
-    
-    This endpoint is specifically designed for the hot news page
-    
-    Parameters:
-    - limit_per_cluster: Articles per cluster (1-10)  
-    - featured_clusters: Number of featured clusters (1-8)
-    
-    Returns:
-    - Featured clusters with articles optimized for hot news display
-    """
-    try:
-        clusters = clustering_service.get_clustered_articles(
-            limit_per_cluster=limit_per_cluster,
-            max_clusters=featured_clusters
-        )
-        
-        return ClustersResponse(
-            clusters=clusters,
-            total_clusters=len(clusters)
-        )
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Hot news error: {str(e)}")
-
-# Sample clusters endpoint using VietnameseTextClustering
-@clustering_router.get("/api/sample-clusters", response_model=ClustersResponse)
-async def get_sample_clusters(
-    n_clusters: int = Query(default=3, ge=1, le=8, description="Number of clusters to sample"),
-    k_nearest: int = Query(default=5, ge=1, le=20, description="Number of articles per cluster")
-):
-    """
-    Get sample clusters using the VietnameseTextClustering model
-    
-    Parameters:
-    - n_clusters: Number of clusters to sample (1-8)
-    - k_nearest: Number of articles per cluster (1-20)
-    
-    Returns:
-    - Sample clusters with articles using real clustering algorithm
-    """
-    try:
-        clusters = clustering_service.get_sample_clusters(
-            n_clusters=n_clusters,
-            k_nearest=k_nearest
-        )
-        
-        return ClustersResponse(
-            clusters=clusters,
-            total_clusters=len(clusters)
-        )
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Sample clustering error: {str(e)}")
-
-# Legacy endpoint for backward compatibility
-@clustering_router.get("/clusters", response_model=List[ArticleCluster])
-async def get_clusters_legacy(
-    limit_per_cluster: int = Query(default=5, ge=1, le=20),
-    max_clusters: int = Query(default=6, ge=1, le=10)
-):
-    """
-    Legacy endpoint for getting clustered articles
-    
-    Returns raw cluster data for backward compatibility
-    """
-    try:
-        clusters = clustering_service.get_clustered_articles(
-            limit_per_cluster=limit_per_cluster,
-            max_clusters=max_clusters
-        )
-        
-        return clusters
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"error: {str(e)}")

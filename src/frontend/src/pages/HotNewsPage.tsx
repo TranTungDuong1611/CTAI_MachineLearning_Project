@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getHotNews, getSampleClusters, getSourceFromUrl, getRelativeTimeString } from '../api/Clustering';
+import { getClustersArticles, getSourceFromUrl, getRelativeTimeString } from '../api/Clustering';
 import type { ArticleCluster, ClusteredArticle } from '../api/Clustering';
 
 interface ArticleCardProps {
@@ -36,11 +36,6 @@ const ArticleCard: React.FC<ArticleCardProps> = ({ article, isLarge = false }) =
                     "https://via.placeholder.com/120x96?text=📰&bg=f3f4f6";
                 }}
             />
-            {article.url_img && (
-                <div className="absolute bottom-1 right-1 bg-black bg-opacity-60 text-white px-1 py-0.5 rounded text-xs">
-                📹
-                </div>
-            )}
             </div>
         </div>
 
@@ -247,14 +242,7 @@ const HotNewsPage: React.FC = () => {
       }
       setError('');
       
-      let response;
-      if (useSampleClusters) {
-        // Use the new sample clusters API with real clustering
-        response = await getSampleClusters(6, 4); // 6 clusters, 4 articles per cluster
-      } else {
-        // Use the existing hot news API (mock clusters)
-        response = await getHotNews(4, 6); // 4 articles per cluster, 6 clusters max
-      }
+      let response = await getClustersArticles(4, 6); // 4 articles per cluster, 6 clusters max
       
       setClusters(response.clusters);
     } catch (err) {
@@ -303,32 +291,6 @@ const HotNewsPage: React.FC = () => {
               <p className="text-gray-600 text-lg mb-3">
                 Cập nhật những tin tức được quan tâm nhiều nhất, phân nhóm theo chủ đề
               </p>
-              {/* Clustering Mode Toggle
-              <div className="flex items-center gap-3">
-                <span className="text-sm text-gray-700 font-medium">Chế độ phân cụm:</span>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => setUseSampleClusters(true)}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                      useSampleClusters
-                        ? 'bg-teal-500 text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                    }`}
-                  >
-                    🤖 AI Clustering
-                  </button>
-                  <button
-                    onClick={() => setUseSampleClusters(false)}
-                    className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
-                      !useSampleClusters
-                        ? 'bg-teal-500 text-white'
-                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                    }`}
-                  >
-                    📂 Theo chủ đề
-                  </button>
-                </div>
-              </div> */}
             </div>
             <button 
               onClick={handleRefresh}
