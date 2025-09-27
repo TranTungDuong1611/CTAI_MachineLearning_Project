@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { classifyText, formatClassificationResult, getConfidenceScore } from '../api/Classification';
+import { summarizeText, formatSummaryResult } from '../api/Summation';
 
 const ClassificationSummationPage: React.FC = () => {
   const [inputText, setInputText] = useState("");
@@ -52,10 +53,13 @@ const ClassificationSummationPage: React.FC = () => {
     setOutputText("");
 
     try {
-      // For now, use a simple summarization (you can replace this with actual API call)
-      const summary = inputText.length > 150 
-        ? `${inputText.substring(0, 150)}...`
-        : inputText;
+      const result = await summarizeText(inputText, {
+        out_max_len: 150, // Limit summary length
+        beams: 2,
+        nrng: 3
+      });
+      
+      const summary = formatSummaryResult(result);
       setOutputText(`Tóm tắt: ${summary}`);
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Có lỗi xảy ra khi tóm tắt văn bản';
@@ -169,7 +173,7 @@ const ClassificationSummationPage: React.FC = () => {
                   {category && (
                     <div className="mb-4">
                       <span className="inline-block bg-black text-white px-3 py-1 text-sm font-bold font-serif">
-                        CHUYÊN MỤC: {category}
+                        CHUYÊN MỤC:
                       </span>
                       {confidence > 0 && (
                         <span className="ml-2 inline-block bg-green-600 text-white px-2 py-1 text-xs font-bold">
@@ -179,9 +183,9 @@ const ClassificationSummationPage: React.FC = () => {
                     </div>
                   )}
                   
-                  <h3 className="text-2xl font-bold font-serif mb-4 leading-tight border-b-2 border-black pb-2">
+                  {/* <h3 className="text-2xl font-bold font-serif mb-4 leading-tight border-b-2 border-black pb-2">
                     {inputText ? inputText.substring(0, 60) + "..." : "Tiêu đề tin tức"}
-                  </h3>
+                  </h3> */}
                   
                   <div className="text-base leading-relaxed font-serif text-justify">
                     <p className="mb-4 first-letter:text-6xl first-letter:font-bold first-letter:mr-2 first-letter:inline-block">
