@@ -37,7 +37,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
   return (
     <div className="flex bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden cursor-pointer" onClick={handleClick}>
       {/* Ảnh cố định bên trái */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 flex items-center justify-center">
         <img
           src={article.url_img}
           alt={article.title}
@@ -54,19 +54,19 @@ const NewsCard: React.FC<NewsCardProps> = ({ article }) => {
           <h3 className="text-base font-semibold text-gray-900 mb-2 leading-snug hover:text-teal-600">
             {article.title}
           </h3>
-          <p className="text-sm text-gray-600 mb-2 line-clamp-2">
+          {/* <p className="text-sm text-gray-600 mb-2 line-clamp-2">
             {article.description}
-          </p>
+          </p> */}
         </div>
-        <div className="flex items-center text-xs text-gray-500 space-x-3">
-          <span className="text-red-500 font-medium">{source}</span>
-          <span>{time}</span>
+        <div className="flex flex-col items-start text-xs text-gray-500 space-y-1">
+          <span className="text-red-500 font-medium">Tác giả: {source}</span>
+          <span>Ngày xuất bản: {time}</span>
           <span className="flex items-center">
             <i className="fas fa-eye mr-1"></i>
-            {views}
+            Lượt xem: {views}
           </span>
           <span className="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">
-            {article.metadata?.cat || 'Tin tức'}
+            Danh mục: {article.metadata?.cat || 'Tin tức'}
           </span>
         </div>
       </div>
