@@ -1,37 +1,13 @@
 import json
 import sys
 import os
-from typing import List, Optional, Dict, Any
-from pydantic import BaseModel
 import sqlite3
+from typing import List, Optional
+from pydantic import BaseModel
+from src.utils.RandomText import pick_random_items
 
 # Add utils directory to path
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), 'utils'))
-
-try:
-    from src.utils import pick_random_items
-except ImportError:
-    # If RandomText module is not available, create a simple fallback
-    def pick_random_items(data, n=20, seed=None, allow_repeat=False, filter_fn=None, keep_keys=False):
-        import random
-        if seed is not None:
-            random.seed(seed)
-        
-        if isinstance(data, dict):
-            items = list(data.values())
-        elif isinstance(data, list):
-            items = data
-        else:
-            return []
-        
-        if filter_fn:
-            items = [x for x in items if filter_fn(x)]
-        
-        if not items:
-            return []
-        
-        k = min(n, len(items))
-        return random.sample(items, k) if not allow_repeat else [random.choice(items) for _ in range(n)]
+sys.path.append(os.getcwd())
 
 class ArticleMetadata(BaseModel):
     cat: Optional[str] = None
@@ -64,7 +40,7 @@ class NewsArticle(BaseModel):
 class RandomTextService:
     def __init__(self, database_path: str = "news.db", json_file_path: Optional[str] = None):
         self.database_path = database_path
-        self.json_file_path = json_file_path or "/content/drive/MyDrive/Text_Cluster/processed_data/processed_data_dash.json"
+        self.json_file_path = json_file_path or "data/processed_data/processed_data_dash.json"
         self.data = None
         self._load_data()
         self._init_database()
